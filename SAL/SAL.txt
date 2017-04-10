@@ -1,0 +1,1 @@
+build/obj/code_main.c.o build/obj/code_sal_sal_string_sal_string.c.o build/obj/code_sal_sal_memory_sal_memory.c.o build/obj/code_sal_sal_error_sal_error.c.o build/obj/code_sal_sal_containers_sal_vector.c.o   

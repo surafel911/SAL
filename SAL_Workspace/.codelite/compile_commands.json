@@ -1,0 +1,9 @@
+[{
+  "directory": "C:\\Users\\surafel911\\Documents\\Coding\\Projects\\Libraries\\SAL\\SAL",
+  "command": "C:/mingw64/bin/gcc.exe -g -O0 -Wall -I. -Icode -MG -MP -MTbuild/obj/code_main.c.o -MFbuild/obj/code_main.c.o.d -MM code/main.c",
+  "file": "C:\\Users\\surafel911\\Documents\\Coding\\Projects\\Libraries\\SAL\\SAL\\code\\main.c"
+ }, {
+  "directory": "C:\\Users\\surafel911\\Documents\\Coding\\Projects\\Libraries\\SAL\\SAL",
+  "command": "C:/mingw64/bin/gcc.exe -c C:/Users/surafel911/Documents/Coding/Projects/Libraries/SAL/SAL/code/main.c -g -O0 -Wall -o build/obj/code_main.c.o -I. -Icode",
+  "file": "C:\\Users\\surafel911\\Documents\\Coding\\Projects\\Libraries\\SAL\\SAL\\code\\main.c"
+ }]
