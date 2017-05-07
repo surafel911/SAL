@@ -7,20 +7,6 @@
 #include <string.h>
 
 void
-sal_for_each(void* begin, void* end, const size_t data_size, const sal_for_each_callback callback)
-{
-	sal_is_null(begin, true);
-	sal_is_null(end, true);
-	sal_is_null((void*)data_size, true);
-	sal_is_null(callback, true);
-
-	for (; begin != end - data_size; begin += data_size)
-	{
-		callback(begin, end);
-	}
-}
-
-void
 sal_move(void* first, void* last, void* destination)
 {
 	sal_is_null(first, true);

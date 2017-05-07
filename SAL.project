@@ -17,6 +17,8 @@
       <File Name="include/sal/sal_hash.h"/>
       <File Name="include/sal/sal_assert.h"/>
       <File Name="include/sal/sal_algorithms.h"/>
+      <File Name="include/sal/sal_typeinfo.h"/>
+      <File Name="include/sal/sal_list.h"/>
     </VirtualDirectory>
   </VirtualDirectory>
   <VirtualDirectory Name="src">
@@ -28,6 +30,7 @@
     <File Name="src/sal_hash.c"/>
     <File Name="src/sal_assert.c"/>
     <File Name="src/sal_algorithms.c"/>
+    <File Name="src/sal_list.c"/>
   </VirtualDirectory>
   <VirtualDirectory Name="example">
     <File Name="example/main.c"/>

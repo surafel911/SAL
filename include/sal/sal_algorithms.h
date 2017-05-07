@@ -1,25 +1,9 @@
 #ifndef SAL_ALGORITHMS_H
 #define SAL_ALGORITHMS_H
 
+// TODO: Review the need of these and whether the header is named correctly.
+
 #include <stddef.h>
-
-/**
- * @brief
- */
-typedef int (*sal_for_each_callback) (void*, void*);
-
-/**
- * @brief
- * @param[in] begin
- *
- * @param[in] end
- *
- * @param[in] data_size
- *
- * @param[in] callback
- */
-void
-sal_for_each(void* begin, void* end, const size_t data_size, const sal_for_each_callback callback);
 
 /**
  * @brief
@@ -44,5 +28,25 @@ sal_move(void* first, void* last, void* destination);
  */
 void
 sal_swap(void* first, void* second, const size_t data_size);
+
+/**
+ * @brief
+ *
+ * @param[in] begin
+ *
+ * @param[in] end
+ *
+ * @param[in] data_size
+ *
+ * @param[in] comparison
+ */
+#define sal_sort(begin, end, data_size, comparison)      \
+for (; begin != end - data_size; begin += data_size)     \
+{                                                        \
+	if (comparison)                                      \
+	{                                                    \
+		sal_swap(begin, begin + data_size, data_size);   \
+	}                                                    \
+}                                                        \
 
 #endif // SAL_ALGORITHMS_H

@@ -6,11 +6,11 @@
 #include <stdbool.h>
 
 /**
- * @brief
+ * @brief Evaluates the expression and, if false, prints out an error message and aborts the program.
  *
- * @param[in] expression
+ * @param[in] expression Expression to be evaluated by sal_assert.h
  *
- * @param[in] message
+ * @param[in] message Message to be printed if the expression evaluates to false.
  */
 void
 sal_assert(bool expression, const char* message);
