@@ -29,24 +29,4 @@ sal_move(void* first, void* last, void* destination);
 void
 sal_swap(void* first, void* second, const size_t data_size);
 
-/**
- * @brief
- *
- * @param[in] begin
- *
- * @param[in] end
- *
- * @param[in] data_size
- *
- * @param[in] comparison
- */
-#define sal_sort(begin, end, data_size, comparison)      \
-for (; begin != end - data_size; begin += data_size)     \
-{                                                        \
-	if (comparison)                                      \
-	{                                                    \
-		sal_swap(begin, begin + data_size, data_size);   \
-	}                                                    \
-}                                                        \
-
 #endif // SAL_ALGORITHMS_H

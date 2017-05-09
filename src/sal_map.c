@@ -36,6 +36,9 @@ sal_map_s_destroy(sal_map_s** map)
 sal_map_s_element*
 sal_map_s_find(sal_map_s* map, const char* key)
 {
+	sal_is_null(map, true);
+	sal_is_null((char*)key, true);
+
 	return map->data + (sal_hash_s(key) % SAL_TABLESET);
 }
 
@@ -82,6 +85,8 @@ sal_map_i_destroy(sal_map_i** map)
 sal_map_i_element*
 sal_map_i_find(sal_map_i* map, int key)
 {
+	sal_is_null(map, true);
+
 	return map->data + (sal_hash_i(key) % SAL_TABLESET);
 }
 
