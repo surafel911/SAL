@@ -2,18 +2,18 @@
 ## Auto Generated makefile by CodeLite IDE
 ## any manual changes will be erased      
 ##
-## Release
+## Debug
 ProjectName            :=SAL_Test
-ConfigurationName      :=Release
+ConfigurationName      :=Debug
 WorkspacePath          :=C:/Users/surafel911/AppData/Roaming/codelite/CodeLite_Workspace
 ProjectPath            :=C:/Users/surafel911/Documents/Coding/Projects/Libraries/SAL
-IntermediateDirectory  :=./Release
+IntermediateDirectory  :=test/obj/
 OutDir                 := $(IntermediateDirectory)
 CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=surafel911
-Date                   :=10/05/2017
+Date                   :=11/05/2017
 CodeLitePath           :="C:/Program Files/CodeLite"
 LinkerName             :=C:/mingw64/bin/g++.exe
 SharedObjectLinkerName :=C:/mingw64/bin/g++.exe -shared -fPIC
@@ -27,7 +27,7 @@ OutputSwitch           :=-o
 LibraryPathSwitch      :=-L
 PreprocessorSwitch     :=-D
 SourceSwitch           :=-c 
-OutputFile             :=$(IntermediateDirectory)/$(ProjectName)
+OutputFile             :=test/debug/$(ProjectName)
 Preprocessors          :=
 ObjectSwitch           :=-o 
 ArchiveOutputSwitch    := 
@@ -42,8 +42,8 @@ IncludePath            :=  $(IncludeSwitch). $(IncludeSwitch)include/
 IncludePCH             := 
 RcIncludePath          := 
 Libs                   := $(LibrarySwitch)sal 
-ArLibs                 :=  "libsal" 
-LibPath                := $(LibraryPathSwitch). $(LibraryPathSwitch)bin/release/ 
+ArLibs                 :=  "sal" 
+LibPath                := $(LibraryPathSwitch). $(LibraryPathSwitch)bin/debug/ 
 
 ##
 ## Common variables
@@ -52,8 +52,8 @@ LibPath                := $(LibraryPathSwitch). $(LibraryPathSwitch)bin/release/
 AR       := C:/mingw64/bin/ar.exe rcu
 CXX      := C:/mingw64/bin/g++.exe
 CC       := C:/mingw64/bin/gcc.exe
-CXXFLAGS :=  -O3 -Wall $(Preprocessors)
-CFLAGS   :=  -O3 -Wall $(Preprocessors)
+CXXFLAGS :=  -g -O2 -Wall $(Preprocessors)
+CFLAGS   :=  -g -O2 -Wall $(Preprocessors)
 ASFLAGS  := 
 AS       := C:/mingw64/bin/as.exe
 
@@ -81,11 +81,11 @@ $(OutputFile): $(IntermediateDirectory)/.d $(Objects)
 	$(LinkerName) $(OutputSwitch)$(OutputFile) @$(ObjectsFileList) $(LibPath) $(Libs) $(LinkOptions)
 
 MakeIntermediateDirs:
-	@$(MakeDirCommand) "./Release"
+	@$(MakeDirCommand) "test/obj/"
 
 
 $(IntermediateDirectory)/.d:
-	@$(MakeDirCommand) "./Release"
+	@$(MakeDirCommand) "test/obj/"
 
 PreBuild:
 
@@ -107,6 +107,6 @@ $(IntermediateDirectory)/test_main.c$(PreprocessSuffix): test/main.c
 ## Clean
 ##
 clean:
-	$(RM) -r ./Release/
+	$(RM) -r test/obj/
 
 

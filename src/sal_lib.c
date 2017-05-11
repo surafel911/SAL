@@ -4,6 +4,9 @@
 #include <stdlib.h>
 #include <string.h>
 
+// TODO: Consider changing error check
+// TODO: Consider inline this stuff
+
 void
 sal_free(void* block)
 {
@@ -22,7 +25,7 @@ sal_malloc(const size_t size)
 	void* block = malloc(size);
 	if (!block)
 	{
-		perror(__FUNCTION__);
+		puts("sal_malloc: Failed to allocate memory.");
 		abort();
 	}
 
@@ -35,7 +38,7 @@ sal_calloc(const size_t nitems, const size_t size)
 	void* block = calloc(nitems, size);
 	if (!block)
 	{
-		perror(__FUNCTION__);
+		puts("sal_calloc: Failed to allocate memory.");
 		abort();
 	}
 
@@ -48,7 +51,7 @@ sal_realloc(void* block, const size_t size)
 	block = realloc(block, size);
 	if (!block)
 	{
-		perror(__FUNCTION__);
+		puts("sal_realloc: Failed to reallocate memory.");
 		abort();
 	}
 

@@ -23,13 +23,12 @@
   </VirtualDirectory>
   <VirtualDirectory Name="src">
     <File Name="src/sal_lib.c"/>
-    <File Name="src/sal_def.c"/>
     <File Name="src/sal_vector.c"/>
-    <File Name="src/sal_array.c"/>
     <File Name="src/sal_map.c"/>
     <File Name="src/sal_hash.c"/>
-    <File Name="src/sal_assert.c"/>
     <File Name="src/sal_algorithms.c"/>
+    <File Name="src/sal_array.c"/>
+    <File Name="src/sal_assert.c"/>
   </VirtualDirectory>
   <Dependencies Name="Debug"/>
   <Dependencies Name="Release"/>
@@ -43,13 +42,13 @@
       </Linker>
       <ResourceCompiler Options=""/>
     </GlobalSettings>
-    <Configuration Name="Debug" CompilerType="mingw64" DebuggerType="GNU gdb debugger" Type="Executable" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
+    <Configuration Name="Debug" CompilerType="mingw64" DebuggerType="GNU gdb debugger" Type="Static Library" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
       <Compiler Options="-g;-O2;-Wall" C_Options="-g;-O2;-Wall;-std=c11" Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
         <IncludePath Value="include/"/>
       </Compiler>
       <Linker Options="" Required="yes"/>
       <ResourceCompiler Options="" Required="no"/>
-      <General OutputFile="bin/debug/$(ProjectName)" IntermediateDirectory="bin/obj/" Command="$(ProjectName)" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="bin/debug/" PauseExecWhenProcTerminates="no" IsGUIProgram="no" IsEnabled="yes"/>
+      <General OutputFile="bin/debug/libsal.a" IntermediateDirectory="bin/obj/" Command="libsal.a" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="bin/debug/" PauseExecWhenProcTerminates="no" IsGUIProgram="no" IsEnabled="yes"/>
       <BuildSystem Name="Default"/>
       <Environment EnvVarSetName="&lt;Use Defaults&gt;" DbgSetName="&lt;Use Defaults&gt;">
         <![CDATA[]]>

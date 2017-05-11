@@ -26,6 +26,28 @@
 #endif // SAL_TABLESET > _SAL_MAP_MAX_CAPACITY
 
 /************************************************************************************************
+ * Generic function macros
+************************************************************************************************/
+
+#define sal_map_find(map, key) _Generic((key),              \
+	const char*: sal_map_s_find,                            \
+	char*: sal_map_s_find,                                  \
+	default: sal_map_i_find                                 \
+	)(map, key)                                             \
+
+#define sal_map_emplace(map, key, value) _Generic((key),    \
+	const char*: sal_map_s_emplace,                         \
+	char*: sal_map_s_emplace,                               \
+	default: sal_map_i_emplace                              \
+	)(map, key, value)                                      \
+
+#define sal_map_erase(map, key) _Generic((key),             \
+	const char*: sal_map_s_erase,                           \
+	char*: sal_map_s_erase,                                 \
+	default: sal_map_i_erase                                \
+	)(map, key)                                             \
+
+/************************************************************************************************
  * String map
 ************************************************************************************************/
 

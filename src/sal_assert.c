@@ -6,9 +6,9 @@
 void
 sal_assert(bool expression, const char* message)
 {
-	if (expression)
+	if (!expression)
 	{
-		printf("sal_assert: %s\n", message);
+		printf("sal_assert failed.\n\n%s\n", message);
 		abort();
 	}
 }

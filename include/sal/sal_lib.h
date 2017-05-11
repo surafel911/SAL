@@ -1,11 +1,7 @@
 #ifndef SAL_LIB_H
 #define SAL_LIB_H
 
-#ifdef _INC_STDLIB
-#error "You must not include stdlib.h when using the SAL main header."
-#endif // _INC_STDLIB
-
-#include <stddef.h>
+#include "sal/sal_def.h"
 
 /**
  * @brief Deallocates a block of memory.
