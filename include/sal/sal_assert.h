@@ -1,8 +1,6 @@
 #ifndef SAL_ASSERT_H
 #define SAL_ASSERT_H
 
-// TODO: Static assert code
-
 #include <stdbool.h>
 
 /**

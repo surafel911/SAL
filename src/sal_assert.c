@@ -8,7 +8,7 @@ sal_assert(bool expression, const char* message)
 {
 	if (expression)
 	{
-		printf("%s\n", message);
+		printf("sal_assert: %s\n", message);
 		abort();
 	}
 }

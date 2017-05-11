@@ -1,8 +1,6 @@
 #ifndef SAL_ALGORITHMS_H
 #define SAL_ALGORITHMS_H
 
-// TODO: Review the need of these and whether the header is named correctly.
-
 #include <stddef.h>
 
 /**

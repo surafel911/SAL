@@ -1,12 +1,5 @@
 #include "sal/sal_map.h"
 
-#ifndef SAL_TABLESET
-/**
- * @brief
- */
-#define SAL_TABLESET 256
-#endif // SAL_TABLESET
-
 #include "sal/sal_def.h"
 #include "sal/sal_lib.h"
 #include "sal/sal_hash.h"
@@ -39,25 +32,50 @@ sal_map_s_find(sal_map_s* map, const char* key)
 	sal_is_null(map, true);
 	sal_is_null((char*)key, true);
 
-	return map->data + (sal_hash_s(key) % SAL_TABLESET);
+	return (map->data + (sal_hash_s(key) % SAL_TABLESET))->value ? (map->data + (sal_hash_s(key) % SAL_TABLESET)) : NULL;
 }
 
 sal_map_s_element*
 sal_map_s_emplace(sal_map_s* map, const char* key, void* value)
 {
-	(map->data + (sal_hash_s(key) % SAL_TABLESET))->key = key;
-	(map->data + (sal_hash_s(key) % SAL_TABLESET))->value = value;
-	map->size++;
+	sal_is_null(map, true);
+	sal_is_null((char*)key, true);
 
-	return (map->data + (sal_hash_s(key) % SAL_TABLESET));
+	if (map->size < _SAL_MAP_MAX_CAPACITY)
+	{
+		sal_is_null(value, true);
+
+		sal_map_s_element* element = (map->data + (sal_hash_s(key) % SAL_TABLESET));
+
+		if (!element->value)
+		{
+			element->key = key;
+			element->value = value;
+		}
+
+		map->size++;
+
+		return element;
+	}
+	else
+	{
+		return NULL;
+	}
 }
 
 void
 sal_map_s_erase(sal_map_s* map, const char* key)
 {
-	(map->data + (sal_hash_s(key) % SAL_TABLESET))->key = NULL;
-	(map->data + (sal_hash_s(key) % SAL_TABLESET))->value = NULL;
-	map->size--;
+	sal_is_null(map, true);
+	sal_is_null((char*)key, true);
+
+	sal_map_s_element* element = (map->data + (sal_hash_s(key) % SAL_TABLESET));
+	if (element->value)
+	{
+		element->key = NULL;
+		element->value = NULL;
+		map->size--;
+	}
 }
 
 sal_map_i*
@@ -87,23 +105,46 @@ sal_map_i_find(sal_map_i* map, int key)
 {
 	sal_is_null(map, true);
 
-	return map->data + (sal_hash_i(key) % SAL_TABLESET);
+	return (map->data + (sal_hash_i(key) % SAL_TABLESET))->value ? (map->data + (sal_hash_i(key) % SAL_TABLESET))->value : NULL;
 }
 
 sal_map_i_element*
 sal_map_i_emplace(sal_map_i* map, int key, void* value)
 {
-	*(long*)(map->data + (sal_hash_i(key) % SAL_TABLESET)) = key;
-	(map->data + (sal_hash_i(key) % SAL_TABLESET))->value = value;
-	map->size++;
+	sal_is_null(map, true);
 
-	return (map->data + (sal_hash_i(key) % SAL_TABLESET));
+	if (map->size < _SAL_MAP_MAX_CAPACITY)
+	{
+		sal_is_null(value, true);
+
+		sal_map_i_element* element = (map->data + (sal_hash_i(key) % SAL_TABLESET));
+
+		if (!element->value)
+		{
+			*(long*)element = key;
+			element->value = value;
+		}
+
+		map->size++;
+
+		return element;
+	}
+	else
+	{
+		return NULL;
+	}
 }
 
 void
 sal_map_i_erase(sal_map_i* map, int key)
 {
-	*(long*)(map->data + (sal_hash_i(key) % SAL_TABLESET)) = 0;
-	(map->data + (sal_hash_i(key) % SAL_TABLESET))->value = NULL;
-	map->size--;
+	sal_is_null(map, true);
+
+	sal_map_i_element* element = (map->data + (sal_hash_i(key) % SAL_TABLESET));
+	if (element->value)
+	{
+		*(long*)element = 0;
+		element->value = NULL;
+		map->size--;
+	}
 }

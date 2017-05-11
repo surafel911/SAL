@@ -48,7 +48,6 @@
  */
 #define sal_array_end_t(type, array) ((type*)array->data + array->size)
 
-
 /**
  * @brief Container storing statically allocating contiguous data.
  */

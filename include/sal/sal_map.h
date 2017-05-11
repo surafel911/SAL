@@ -8,7 +8,22 @@
 #define SAL_EMPTY 0
 #endif // SAL_EMPTY
 
-// TODO: Add generic shit
+#ifndef SAL_TABLESET
+/**
+ * @brief
+ */
+#define SAL_TABLESET 256
+#endif // SAL_TABLESET
+
+#ifdef _SAL_MAP_MAX_CAPACITY
+#error "SAL_MAP_MAX_CAPACITY should not be defined."
+#else
+#define _SAL_MAP_MAX_CAPACITY 1000
+#endif // _SAL_MAP_MAX_CAPACITY
+
+#if SAL_TABLESET > _SAL_MAP_MAX_CAPACITY
+#error "SAL_TABLESET is greater than the maximum map capacity (1000)."
+#endif // SAL_TABLESET > _SAL_MAP_MAX_CAPACITY
 
 /************************************************************************************************
  * String map

@@ -7,7 +7,9 @@ sal_hash_s(const char* string)
 	int c;
 
 	while ((c = *string++))
+	{
 		hash = ((hash << 5) + hash) + c;
+	}
 
 	return hash;
 }
@@ -21,5 +23,6 @@ sal_hash_i(unsigned int value)
    value = (value + 0xd3a2646c) ^ (value << 9);
    value = (value + 0xfd7046c5) + (value << 3);
    value = (value ^ 0xb55a4f09) ^ (value >> 16);
+
    return value;
 }

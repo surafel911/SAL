@@ -47,24 +47,11 @@
 #define sal_vector_end_t(type, vector) ((type*)vector->data + vector->size)
 
 /**
- * @brief Generate a type specific version of the sal_vector structure.
+ * @brief Syntactic sugar macro for sal_generate_vector.
  *
- * Creates a type specific version of the sal_vector structure. You should call this macro near the beginning of your file
- * as the macro defines a new type. The structure of this custom sal_vector type is equivulent to the generic version, so a
- * simple cast to a sal_vector* will allow this type to be utilized in the generic functions.
- *
- * @param[in] name Type name added onto sal_vector type. Can be a shortened version of the type's name or be used to compensate
- * for the unsigned and signed signitures.
- *
- * @param[in] type User definined type that the sal_vector will store.
+ * Is equivelent to sal_generate_vector(typem type).
  */
-#define sal_generate_vector(name, type)    \
-typedef struct                             \
-{                                          \
-	type* data;                            \
-	const size_t data_size;                \
-	unsigned short size, capacity;         \
-} sal_vector_##name;                       \
+#define sal_generate_vector_t(type) sal_generate_vector(type, type)
 
 /**
  * @brief Container for dynamically allocating contiguous data.
