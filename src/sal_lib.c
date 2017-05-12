@@ -4,9 +4,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-// TODO: Consider changing error check
-// TODO: Consider inline this stuff
-
 void
 sal_free(void* block)
 {

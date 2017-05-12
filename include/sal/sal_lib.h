@@ -9,7 +9,7 @@
  * Deallocates the pointer passed into the function. If the pointer points to NULL or invalid memory, the function will
  * cause the program to abort and print an error message.
  *
- * @param block Block of memory to deallocate.
+ * @param block Pointer to the memory to deallocate.
  */
 void
 sal_free(void* block);
@@ -37,7 +37,7 @@ sal_malloc(const size_t size);
  *
  * @param[in] size Size of each element.
  *
- * @return Pointer to the newly allocated block of memory.
+ * @return Pointer to the allocated memory.
  */
 void*
 sal_calloc(const size_t nitems, const size_t size);

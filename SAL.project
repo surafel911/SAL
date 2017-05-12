@@ -48,7 +48,7 @@
       </Compiler>
       <Linker Options="" Required="yes"/>
       <ResourceCompiler Options="" Required="no"/>
-      <General OutputFile="bin/debug/libsal.a" IntermediateDirectory="bin/obj/" Command="libsal.a" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="bin/debug/" PauseExecWhenProcTerminates="no" IsGUIProgram="no" IsEnabled="yes"/>
+      <General OutputFile="bin/libsal.a" IntermediateDirectory="bin/obj/" Command="libsal.a" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="bin/" PauseExecWhenProcTerminates="no" IsGUIProgram="no" IsEnabled="yes"/>
       <BuildSystem Name="Default"/>
       <Environment EnvVarSetName="&lt;Use Defaults&gt;" DbgSetName="&lt;Use Defaults&gt;">
         <![CDATA[]]>
@@ -88,7 +88,7 @@
       </Compiler>
       <Linker Options="" Required="yes"/>
       <ResourceCompiler Options="" Required="no"/>
-      <General OutputFile="bin/release/libsal.a" IntermediateDirectory="bin/obj/" Command="libsal.a" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="bin/release/" PauseExecWhenProcTerminates="no" IsGUIProgram="no" IsEnabled="yes"/>
+      <General OutputFile="bin/libsal.a" IntermediateDirectory="bin/obj/" Command="libsal.a" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="bin/" PauseExecWhenProcTerminates="no" IsGUIProgram="no" IsEnabled="yes"/>
       <BuildSystem Name="Default"/>
       <Environment EnvVarSetName="&lt;Use Defaults&gt;" DbgSetName="&lt;Use Defaults&gt;">
         <![CDATA[]]>

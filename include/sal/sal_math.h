@@ -6,85 +6,85 @@
 __inline__ double
 sal_acos(double x)
 {
-	return acos(x) * (180.0 / PI);
+	return acos(x) * (180.0 / M_PI);
 }
 
 __inline__ double
 sal_asin(double x)
 {
-	return asin(x) * (180.0 / PI);
+	return asin(x) * (180.0 / M_PI);
 }
 __inline__ double
 sal_atan(double x)
 {
-	return atan(x) * (180.0 / PI);
+	return atan(x) * (180.0 / M_PI);
 }
 
 __inline__ double
 sal_atan2(double y, double x)
 {
-	return atan2(y, x) * (180.0 / PI);
+	return atan2(y / (180.0 / M_PI), x / (180.0 / M_PI)) * (180.0 / M_PI);
 }
 
 __inline__ double
 sal_cos(double x)
 {
-	return cos(x) * (180.0 / PI);
+	return cos(x / (180.0 / M_PI));
 }
 
 __inline__ double
 sal_sin(double x)
 {
-	return sin(x) * (180.0 / PI);
+	return sin(x / (180.0 / M_PI));
 }
 
 __inline__ double
 sal_tan(double x)
 {
-	return tan(x) * (180.0 / PI);
+	return tan(x / (180.0 / M_PI));
 }
 
 __inline__ float
 sal_acosf(float x)
 {
-	return acosf(x) * (180.0f / PI);
+	return acosf(x / (180.0 / M_PI)) * (180.0f / M_PI);
 }
 
 __inline__ float
 sal_asinf(float x)
 {
-	return asinf(x) * (180.0f / PI);
+	return asinf(x / (180.0 / M_PI)) * (180.0f / M_PI);
 }
 
 __inline__ float
 sal_atanf(float x)
 {
-	return atanf(x) * (180.0f / PI);
+	return atanf(x / (180.0 / M_PI)) * (180.0f / M_PI);
 }
 
 __inline__ float
 sal_atan2f(float y, float x)
 {
-	return atan2f(y, x) * (180.0f / PI);
+	return atan2f(y / (180.0 / M_PI), x / (180.0 / M_PI)) * (180.0f / M_PI);
 }
 
 
 __inline__ float
 sal_cosf(float x)
 {
-	return cosf(x) * (180.0f / PI);
+	return cosf(x / (180.0 / M_PI));
 }
 
 __inline__ float
 sal_sinf(float x)
 {
-	return sinf(x) * (180.0f / PI);
+	return sinf(x / (180.0 / M_PI));
 }
 
 __inline__ float
 sal_tanf(float x)
 {
-	return tanf(x) * (180.0f / PI);
+	return tanf(x / (180.0 / M_PI));
 }
 
 #ifdef SAL_MATH_DEGREE
