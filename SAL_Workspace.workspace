@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeLite_Workspace Name="SAL_Workspace" Database="" Version="10.0.0">
+  <Project Name="SAL_Test" Path="SAL_Test.project" Active="Yes"/>
+  <Project Name="SAL" Path="SAL.project" Active="No"/>
+  <BuildMatrix>
+    <WorkspaceConfiguration Name="Debug" Selected="no">
+      <Environment/>
+      <Project Name="SAL_Test" ConfigName="Debug"/>
+      <Project Name="SAL" ConfigName="Debug"/>
+    </WorkspaceConfiguration>
+    <WorkspaceConfiguration Name="Release" Selected="yes">
+      <Environment/>
+      <Project Name="SAL_Test" ConfigName="Release"/>
+      <Project Name="SAL" ConfigName="Release"/>
+    </WorkspaceConfiguration>
+  </BuildMatrix>
+</CodeLite_Workspace>

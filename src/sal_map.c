@@ -9,7 +9,7 @@ sal_map_s_create()
 {
 	sal_map_s* map = (sal_map_s*)sal_calloc(1, sizeof(sal_map_s));
 
-	map->data = sal_calloc(SAL_TABLESET, sizeof(sal_map_s_element));
+	map->data = sal_malloc(sizeof(sal_map_s_element) * SAL_TABLESET);
 	map->size = 0;
 
 	return map;
@@ -83,7 +83,7 @@ sal_map_i_create()
 {
 	sal_map_i* map = (sal_map_i*)sal_calloc(1, sizeof(sal_map_i));
 
-	map->data = sal_calloc(SAL_TABLESET, sizeof(sal_map_i_element));
+	map->data = sal_malloc(sizeof(sal_map_i_element) * SAL_TABLESET);
 	map->size = 0;
 
 	return map;

@@ -79,7 +79,7 @@ typedef struct
  * @return Pointer to a new sal_map_s instance
  */
 sal_map_s*
-sal_map_s_create();
+sal_map_s_create(void);
 
 /**
  * @brief
@@ -147,7 +147,7 @@ typedef struct
  * @return
  */
 sal_map_i*
-sal_map_i_create();
+sal_map_i_create(void);
 
 /**
  * @brief

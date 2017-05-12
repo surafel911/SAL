@@ -1,6 +1,8 @@
 #ifndef SAL_LIB_H
 #define SAL_LIB_H
 
+// TODO: Work on the docs stuff off stream.
+
 #include "sal/sal_def.h"
 
 /**

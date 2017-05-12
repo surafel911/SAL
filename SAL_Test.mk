@@ -5,7 +5,7 @@
 ## Release
 ProjectName            :=SAL_Test
 ConfigurationName      :=Release
-WorkspacePath          :=C:/Users/surafel911/AppData/Roaming/codelite/CodeLite_Workspace
+WorkspacePath          :=C:/Users/surafel911/Documents/Coding/Projects/Libraries/SAL
 ProjectPath            :=C:/Users/surafel911/Documents/Coding/Projects/Libraries/SAL
 IntermediateDirectory  :=test/obj/
 OutDir                 := $(IntermediateDirectory)
@@ -27,7 +27,7 @@ OutputSwitch           :=-o
 LibraryPathSwitch      :=-L
 PreprocessorSwitch     :=-D
 SourceSwitch           :=-c 
-OutputFile             :=test/release/$(ProjectName)
+OutputFile             :=test/$(ProjectName)
 Preprocessors          :=$(PreprocessorSwitch)NDEBUG 
 ObjectSwitch           :=-o 
 ArchiveOutputSwitch    := 
@@ -43,7 +43,7 @@ IncludePCH             :=
 RcIncludePath          := 
 Libs                   := $(LibrarySwitch)sal 
 ArLibs                 :=  "sal" 
-LibPath                := $(LibraryPathSwitch). $(LibraryPathSwitch)bin/release/ 
+LibPath                := $(LibraryPathSwitch). $(LibraryPathSwitch)bin/ 
 
 ##
 ## Common variables

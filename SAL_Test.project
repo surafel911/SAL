@@ -27,11 +27,11 @@
         <IncludePath Value="include/"/>
       </Compiler>
       <Linker Options="" Required="yes">
-        <LibraryPath Value="bin/debug/"/>
+        <LibraryPath Value="bin/"/>
         <Library Value="sal"/>
       </Linker>
       <ResourceCompiler Options="" Required="no"/>
-      <General OutputFile="test/debug/$(ProjectName)" IntermediateDirectory="test/obj/" Command="$(ProjectName)" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="test/debug/" PauseExecWhenProcTerminates="no" IsGUIProgram="no" IsEnabled="yes"/>
+      <General OutputFile="test/$(ProjectName)" IntermediateDirectory="test/obj/" Command="$(ProjectName)" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="test/" PauseExecWhenProcTerminates="no" IsGUIProgram="no" IsEnabled="yes"/>
       <BuildSystem Name="Default"/>
       <Environment EnvVarSetName="&lt;Use Defaults&gt;" DbgSetName="&lt;Use Defaults&gt;">
         <![CDATA[]]>
@@ -70,11 +70,11 @@
         <Preprocessor Value="NDEBUG"/>
       </Compiler>
       <Linker Options="" Required="yes">
-        <LibraryPath Value="bin/release/"/>
+        <LibraryPath Value="bin/"/>
         <Library Value="sal"/>
       </Linker>
       <ResourceCompiler Options="" Required="no"/>
-      <General OutputFile="test/release/$(ProjectName)" IntermediateDirectory="test/obj/" Command="$(ProjectName)" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="test/release/" PauseExecWhenProcTerminates="no" IsGUIProgram="no" IsEnabled="yes"/>
+      <General OutputFile="test/$(ProjectName)" IntermediateDirectory="test/obj/" Command="$(ProjectName)" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="test/" PauseExecWhenProcTerminates="no" IsGUIProgram="no" IsEnabled="yes"/>
       <BuildSystem Name="Default"/>
       <Environment EnvVarSetName="&lt;Use Defaults&gt;" DbgSetName="&lt;Use Defaults&gt;">
         <![CDATA[]]>

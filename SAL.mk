@@ -5,7 +5,7 @@
 ## Release
 ProjectName            :=SAL
 ConfigurationName      :=Release
-WorkspacePath          :=C:/Users/surafel911/AppData/Roaming/codelite/CodeLite_Workspace
+WorkspacePath          :=C:/Users/surafel911/Documents/Coding/Projects/Libraries/SAL
 ProjectPath            :=C:/Users/surafel911/Documents/Coding/Projects/Libraries/SAL
 IntermediateDirectory  :=bin/obj/
 OutDir                 := $(IntermediateDirectory)
@@ -79,8 +79,8 @@ $(OutputFile): $(Objects)
 	@echo "" > $(IntermediateDirectory)/.d
 	@echo $(Objects0)  > $(ObjectsFileList)
 	$(AR) $(ArchiveOutputSwitch)$(OutputFile) @$(ObjectsFileList) $(ArLibs)
-	@$(MakeDirCommand) "C:\Users\surafel911\AppData\Roaming\codelite\CodeLite_Workspace/.build-release"
-	@echo rebuilt > "C:\Users\surafel911\AppData\Roaming\codelite\CodeLite_Workspace/.build-release/SAL"
+	@$(MakeDirCommand) "C:\Users\surafel911\Documents\Coding\Projects\Libraries\SAL/.build-release"
+	@echo rebuilt > "C:\Users\surafel911\Documents\Coding\Projects\Libraries\SAL/.build-release/SAL"
 
 MakeIntermediateDirs:
 	@$(MakeDirCommand) "bin/obj/"

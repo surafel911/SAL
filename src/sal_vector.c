@@ -10,7 +10,7 @@
 sal_vector*
 sal_vector_create(const unsigned short data_size)
 {
-	sal_vector* vector = (sal_vector*)sal_calloc(1, sizeof(sal_vector));
+	sal_vector* vector = (sal_vector*)sal_malloc(sizeof(sal_vector));
 
 	vector->data = sal_calloc(1, 0);
 	vector->size = 0;

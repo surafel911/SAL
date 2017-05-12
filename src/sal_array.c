@@ -6,8 +6,8 @@
 sal_array*
 sal_array_create(const unsigned short size, const size_t data_size)
 {
-	sal_array* array = (sal_array*)sal_calloc(1, sizeof(sal_array));
-	array->data = sal_calloc(size, data_size * size);
+	sal_array* array = (sal_array*)sal_malloc(sizeof(sal_array));
+	array->data = sal_malloc(data_size * size);
 	*(size_t*)&array->data_size = data_size;
 	*(unsigned short*)&array->size = size;
 

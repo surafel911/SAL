@@ -122,4 +122,7 @@
       </Completion>
     </Configuration>
   </Settings>
+  <VirtualDirectory Name="docs">
+    <File Name="docs/index.html"/>
+  </VirtualDirectory>
 </CodeLite_Project>
