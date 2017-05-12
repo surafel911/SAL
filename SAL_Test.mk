@@ -2,9 +2,9 @@
 ## Auto Generated makefile by CodeLite IDE
 ## any manual changes will be erased      
 ##
-## Debug
+## Release
 ProjectName            :=SAL_Test
-ConfigurationName      :=Debug
+ConfigurationName      :=Release
 WorkspacePath          :=C:/Users/surafel911/AppData/Roaming/codelite/CodeLite_Workspace
 ProjectPath            :=C:/Users/surafel911/Documents/Coding/Projects/Libraries/SAL
 IntermediateDirectory  :=test/obj/
@@ -27,8 +27,8 @@ OutputSwitch           :=-o
 LibraryPathSwitch      :=-L
 PreprocessorSwitch     :=-D
 SourceSwitch           :=-c 
-OutputFile             :=test/debug/$(ProjectName)
-Preprocessors          :=
+OutputFile             :=test/release/$(ProjectName)
+Preprocessors          :=$(PreprocessorSwitch)NDEBUG 
 ObjectSwitch           :=-o 
 ArchiveOutputSwitch    := 
 PreprocessOnlySwitch   :=-E
@@ -43,7 +43,7 @@ IncludePCH             :=
 RcIncludePath          := 
 Libs                   := $(LibrarySwitch)sal 
 ArLibs                 :=  "sal" 
-LibPath                := $(LibraryPathSwitch). $(LibraryPathSwitch)bin/debug/ 
+LibPath                := $(LibraryPathSwitch). $(LibraryPathSwitch)bin/release/ 
 
 ##
 ## Common variables
@@ -52,8 +52,8 @@ LibPath                := $(LibraryPathSwitch). $(LibraryPathSwitch)bin/debug/
 AR       := C:/mingw64/bin/ar.exe rcu
 CXX      := C:/mingw64/bin/g++.exe
 CC       := C:/mingw64/bin/gcc.exe
-CXXFLAGS :=  -g -O2 -Wall $(Preprocessors)
-CFLAGS   :=  -g -O2 -Wall $(Preprocessors)
+CXXFLAGS :=  -O3 -Wall $(Preprocessors)
+CFLAGS   :=  -O3 -Wall $(Preprocessors)
 ASFLAGS  := 
 AS       := C:/mingw64/bin/as.exe
 

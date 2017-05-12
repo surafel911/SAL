@@ -2,9 +2,9 @@
 ## Auto Generated makefile by CodeLite IDE
 ## any manual changes will be erased      
 ##
-## Debug
+## Release
 ProjectName            :=SAL
-ConfigurationName      :=Debug
+ConfigurationName      :=Release
 WorkspacePath          :=C:/Users/surafel911/AppData/Roaming/codelite/CodeLite_Workspace
 ProjectPath            :=C:/Users/surafel911/Documents/Coding/Projects/Libraries/SAL
 IntermediateDirectory  :=bin/obj/
@@ -28,7 +28,7 @@ LibraryPathSwitch      :=-L
 PreprocessorSwitch     :=-D
 SourceSwitch           :=-c 
 OutputFile             :=bin/libsal.a
-Preprocessors          :=
+Preprocessors          :=$(PreprocessorSwitch)NDEBUG 
 ObjectSwitch           :=-o 
 ArchiveOutputSwitch    := 
 PreprocessOnlySwitch   :=-E
@@ -52,8 +52,8 @@ LibPath                := $(LibraryPathSwitch).
 AR       := C:/mingw64/bin/ar.exe rcu
 CXX      := C:/mingw64/bin/g++.exe
 CC       := C:/mingw64/bin/gcc.exe
-CXXFLAGS :=  -g -O2 -Wall $(Preprocessors)
-CFLAGS   :=  -g -O2 -Wall -std=c11 $(Preprocessors)
+CXXFLAGS :=  -O3 -Wall $(Preprocessors)
+CFLAGS   :=  -O3 -Wall -std=c11 $(Preprocessors)
 ASFLAGS  := 
 AS       := C:/mingw64/bin/as.exe
 
@@ -79,8 +79,8 @@ $(OutputFile): $(Objects)
 	@echo "" > $(IntermediateDirectory)/.d
 	@echo $(Objects0)  > $(ObjectsFileList)
 	$(AR) $(ArchiveOutputSwitch)$(OutputFile) @$(ObjectsFileList) $(ArLibs)
-	@$(MakeDirCommand) "C:\Users\surafel911\AppData\Roaming\codelite\CodeLite_Workspace/.build-debug"
-	@echo rebuilt > "C:\Users\surafel911\AppData\Roaming\codelite\CodeLite_Workspace/.build-debug/SAL"
+	@$(MakeDirCommand) "C:\Users\surafel911\AppData\Roaming\codelite\CodeLite_Workspace/.build-release"
+	@echo rebuilt > "C:\Users\surafel911\AppData\Roaming\codelite\CodeLite_Workspace/.build-release/SAL"
 
 MakeIntermediateDirs:
 	@$(MakeDirCommand) "bin/obj/"
