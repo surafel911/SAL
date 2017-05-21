@@ -1,9 +1,17 @@
 [{
   "directory": "C:\\Users\\surafel911\\Documents\\Coding\\Projects\\Libraries\\SAL",
+  "command": "C:/mingw64/bin/gcc.exe -O3 -Wall -std=c11 -DNDEBUG -I. -Iinclude/ -MG -MP -MTbin/obj//src_sal_assert.c.o -MFbin/obj//src_sal_assert.c.o.d -MM src/sal_assert.c",
+  "file": "C:\\Users\\surafel911\\Documents\\Coding\\Projects\\Libraries\\SAL\\src\\sal_assert.c"
+ }, {
+  "directory": "C:\\Users\\surafel911\\Documents\\Coding\\Projects\\Libraries\\SAL",
   "command": "C:/mingw64/bin/gcc.exe -O3 -Wall -std=c11 -DNDEBUG -I. -Iinclude/ -MG -MP -MTbin/obj//src_sal_vector.c.o -MFbin/obj//src_sal_vector.c.o.d -MM src/sal_vector.c",
   "file": "C:\\Users\\surafel911\\Documents\\Coding\\Projects\\Libraries\\SAL\\src\\sal_vector.c"
  }, {
   "directory": "C:\\Users\\surafel911\\Documents\\Coding\\Projects\\Libraries\\SAL",
   "command": "C:/mingw64/bin/gcc.exe -c C:/Users/surafel911/Documents/Coding/Projects/Libraries/SAL/src/sal_vector.c -O3 -Wall -std=c11 -DNDEBUG -o bin/obj//src_sal_vector.c.o -I. -Iinclude/",
   "file": "C:\\Users\\surafel911\\Documents\\Coding\\Projects\\Libraries\\SAL\\src\\sal_vector.c"
+ }, {
+  "directory": "C:\\Users\\surafel911\\Documents\\Coding\\Projects\\Libraries\\SAL",
+  "command": "C:/mingw64/bin/gcc.exe -c C:/Users/surafel911/Documents/Coding/Projects/Libraries/SAL/src/sal_assert.c -O3 -Wall -std=c11 -DNDEBUG -o bin/obj//src_sal_assert.c.o -I. -Iinclude/",
+  "file": "C:\\Users\\surafel911\\Documents\\Coding\\Projects\\Libraries\\SAL\\src\\sal_assert.c"
  }]

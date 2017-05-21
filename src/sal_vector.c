@@ -24,7 +24,7 @@ void
 sal_vector_destroy(sal_vector** vector)
 {
 	sal_assert(vector == NULL, "sal_vector_destroy: Invalid reference to a pointer to a sal_vector instance passed.");
-	sal_assert((*vector == NULL), "sal_vector_destroy: Invalid pointer to sal_vector instance passed.");
+	sal_assert((*vector) == NULL, "sal_vector_destroy: Invalid pointer to sal_vector instance passed.");
 
 	free((*vector)->data);
 	free((*vector));
