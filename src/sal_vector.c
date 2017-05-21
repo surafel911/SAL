@@ -10,9 +10,12 @@
 sal_vector*
 sal_vector_create(const unsigned short data_size)
 {
-	sal_vector* vector = (sal_vector*)malloc(sizeof(sal_vector));
+	sal_vector* vector = (sal_vector*)calloc(1, sizeof(sal_vector));
+	sal_assert(vector == NULL, "sal_vector_create: Failed to allocate memory for a sal_vector instance.");
 
-	vector->data = malloc(0);
+	vector->data = calloc(1, 0);
+	sal_assert(vector == NULL, "sal_vector_create: Failed to allocate memory for the sal_vector instance data.");
+
 	vector->size = 0;
 	vector->capacity = 0;
 	*(size_t*)&vector->data_size = data_size;
@@ -56,6 +59,8 @@ sal_vector_shrink(sal_vector* vector)
 	sal_assert(vector == NULL, "sal_vector_destroy: Invalid pointer to sal_vector instance passed.");
 
 	realloc(vector->data, vector->data_size * (vector->size - 1));
+	sal_assert(vector->data == NULL, "sal_vector_shrink: Failed to reallocate memory for sal_vector data.");
+
 	vector->capacity = vector->size;
 }
 
@@ -76,11 +81,14 @@ sal_vector_push_back(sal_vector* vector)
 	if (!vector->size)
 	{
 		realloc(vector->data, vector->data_size);
+		sal_assert(vector->data == NULL, "sal_vector_push_back: Failed to reallocate memory for sal_vector data.");
+
 		vector->capacity++;
 	}
 	else if (vector->size == vector->capacity)
 	{
 		realloc(vector->data, vector->data_size * (vector->capacity *= 2));
+		sal_assert(vector->data == NULL, "sal_vector_push_back: Failed to reallocate memory for sal_vector data.");
 	}
 
 	return vector->data + vector->data_size * vector->size++;
@@ -95,11 +103,14 @@ sal_vector_insert(sal_vector* vector, const unsigned short pos)
 	if (!vector->size)
 	{
 		realloc(vector->data, vector->data_size);
+		sal_assert(vector->data == NULL, "sal_vector_insert: Failed to reallocate memory for sal_vector data.");
+
 		vector->capacity++;
 	}
 	else if (vector->size == vector->capacity)
 	{
 		realloc(vector->data, vector->data_size * (vector->capacity *= 2));
+		sal_assert(vector->data == NULL, "sal_vector_insert: Failed to reallocate memory for sal_vector data.");
 	}
 
 	memmove(vector->data + vector->data_size * (pos + 1), vector->data + vector->data_size * pos, vector->data_size * (vector->size++ - pos));
@@ -114,6 +125,7 @@ sal_vector_pop_back(sal_vector* vector)
 	if (vector->size && vector->size == vector->capacity / 2)
 	{
 		realloc(vector->data, vector->data_size * (vector->capacity /= 2));
+		sal_assert(vector->data == NULL, "sal_vector_pop_back: Failed to reallocate memory for sal_vector data.");
 	}
 
 	vector->size--;
@@ -127,8 +139,8 @@ sal_vector_erase(sal_vector* vector, const unsigned short pos)
 
 	if (vector->size && vector->size == vector->capacity / 2)
 	{
-		sal_assert(pos < vector->size, ":");
 		realloc(vector->data, vector->data_size * (vector->capacity /= 2));
+		sal_assert(vector->data == NULL, "sal_vector_erase: Failed to reallocate memory for sal_vector data.");
 	}
 
 	memmove(vector->data + vector->data_size * pos, vector->data + vector->data_size * (pos + 1), vector->data_size * (vector->size - pos));

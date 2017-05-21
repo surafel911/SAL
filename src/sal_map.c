@@ -8,9 +8,12 @@
 sal_map_s*
 sal_map_s_create()
 {
-	sal_map_s* map = (sal_map_s*)sal_calloc(1, sizeof(sal_map_s));
+	sal_map_s* map = (sal_map_s*)calloc(1, sizeof(sal_map_s));
+	sal_assert(map->data == NULL, "sal_map_s_create: Failed to allocate memory for a sal_map_s.");
 
-	map->data = sal_malloc(sizeof(sal_map_s_element) * SAL_TABLESET);
+	map->data = calloc(SAL_TABLESET, sizeof(sal_map_s_element));
+	sal_assert(map->data == NULL, "sal_map_s_create: Failed to allocate memory for the sal_map_s instance data.");
+
 	map->size = 0;
 
 	return map;
@@ -22,8 +25,8 @@ sal_map_s_destroy(sal_map_s** map)
 	sal_assert(map == NULL, "sal_map_s_destroy: Invalid reference to a pointer to a sal_map_s instance passed.");
 	sal_assert((*map) == NULL, "sal_map_s_destroy: Invalid pointer to a sal_map_s instance passed.");
 
-	sal_free((*map)->data);
-	sal_free((*map));
+	free((*map)->data);
+	free((*map));
 	(*map) = NULL;
 }
 
@@ -82,9 +85,12 @@ sal_map_s_erase(sal_map_s* map, const char* key)
 sal_map_i*
 sal_map_i_create()
 {
-	sal_map_i* map = (sal_map_i*)sal_calloc(1, sizeof(sal_map_i));
+	sal_map_i* map = (sal_map_i*)calloc(1, sizeof(sal_map_i));
+	sal_assert(map == NULL, "sal_map_i_create: Failed to allocate memory for a sal_map_i instance.");
 
-	map->data = sal_malloc(sizeof(sal_map_i_element) * SAL_TABLESET);
+	map->data = calloc(SAL_TABLESET, sizeof(sal_map_i_element));
+	sal_assert(map->data == NULL, "sal_map_i_create: Failed to allocate memory for the sal_map_i instance data.");
+
 	map->size = 0;
 
 	return map;
@@ -96,8 +102,8 @@ sal_map_i_destroy(sal_map_i** map)
 	sal_assert(map == NULL, "sal_map_i_destroy: Invalid reference to a pointer to a sal_map_i instance passed.");
 	sal_assert((*map) == NULL, "sal_map_i_destroy: Invalid pointer to a sal_map_i instance passed.");
 
-	sal_free((*map)->data);
-	sal_free((*map));
+	free((*map)->data);
+	free((*map));
 	(*map) = NULL;
 }
 

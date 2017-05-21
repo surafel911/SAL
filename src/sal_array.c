@@ -7,8 +7,12 @@
 sal_array*
 sal_array_create(const unsigned short size, const size_t data_size)
 {
-	sal_array* array = (sal_array*)malloc(sizeof(sal_array));
-	array->data = malloc(data_size * size);
+	sal_array* array = (sal_array*)calloc(1, sizeof(sal_array));
+	sal_assert(array == NULL, "sal_array_create: Failed to allocate memory for a sal_array instance.");
+
+	array->data = calloc(size, data_size);
+	sal_assert(array == NULL, "sal_array_create: Failed to allocate memory for the sal_array instance data.");
+
 	*(size_t*)&array->data_size = data_size;
 	*(unsigned short*)&array->size = size;
 
