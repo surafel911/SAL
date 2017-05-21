@@ -90,7 +90,7 @@ void*
 sal_vector_insert(sal_vector* vector, const unsigned short pos)
 {
 	sal_assert(vector == NULL, "sal_vector_destroy: Invalid pointer to sal_vector instance passed.");
-	sal_assert(pos < vector->size, "sal_vector_insert: Out of bounds access of sal_vector.");
+	sal_assert(pos >= vector->size, "sal_vector_insert: Out of bounds access of sal_vector.");
 
 	if (!vector->size)
 	{
@@ -123,7 +123,7 @@ void
 sal_vector_erase(sal_vector* vector, const unsigned short pos)
 {
 	sal_assert(vector == NULL, "sal_vector_destroy: Invalid pointer to sal_vector instance passed.");
-	sal_assert(pos < vector->size, "sal_vector_erase: Out of bounds access of sal_vector.");
+	sal_assert(pos >= vector->size, "sal_vector_erase: Out of bounds access of sal_vector.");
 
 	if (vector->size && vector->size == vector->capacity / 2)
 	{

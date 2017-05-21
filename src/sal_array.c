@@ -31,7 +31,7 @@ void*
 sal_array_at(sal_array* array, const unsigned short pos)
 {
 	sal_assert(array == NULL, "sal_array_destroy: Invalid pointer to sal_array instance.");
-	sal_assert(pos < array->size, "sal_array_at: Out of bounds access of sal_array.");
+	sal_assert(pos >= array->size, "sal_array_at: Out of bounds access of sal_array.");
 
 	return (array->data + array->data_size * pos);
 }
