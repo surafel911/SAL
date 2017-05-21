@@ -1,8 +1,9 @@
 #include "sal/sal_map.h"
 
-#include "sal/sal_lib.h"
 #include "sal/sal_hash.h"
 #include "sal/sal_assert.h"
+
+#include <stdlib.h>
 
 sal_map_s*
 sal_map_s_create()

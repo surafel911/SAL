@@ -4,11 +4,11 @@
 #include "sal/sal_hash.h"
 
 /**
- * @brief
+ * @brief Gets a string of the passed in type.
  *
- * @param[in] type
+ * @param[in] type Type to query.
  *
- * @return
+ * @return A string literal of the type.
  */
 #define sal_type_name(type) #name
 

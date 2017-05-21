@@ -13,7 +13,7 @@ CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=surafel911
-Date                   :=11/05/2017
+Date                   :=20/05/2017
 CodeLitePath           :="C:/Program Files/CodeLite"
 LinkerName             :=C:/mingw64/bin/g++.exe
 SharedObjectLinkerName :=C:/mingw64/bin/g++.exe -shared -fPIC
@@ -62,7 +62,7 @@ AS       := C:/mingw64/bin/as.exe
 ## User defined environment variables
 ##
 CodeLiteDir:=C:\Program Files\CodeLite
-Objects0=$(IntermediateDirectory)/src_sal_lib.c$(ObjectSuffix) $(IntermediateDirectory)/src_sal_vector.c$(ObjectSuffix) $(IntermediateDirectory)/src_sal_map.c$(ObjectSuffix) $(IntermediateDirectory)/src_sal_hash.c$(ObjectSuffix) $(IntermediateDirectory)/src_sal_algorithms.c$(ObjectSuffix) $(IntermediateDirectory)/src_sal_array.c$(ObjectSuffix) $(IntermediateDirectory)/src_sal_assert.c$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/src_sal_vector.c$(ObjectSuffix) $(IntermediateDirectory)/src_sal_map.c$(ObjectSuffix) $(IntermediateDirectory)/src_sal_hash.c$(ObjectSuffix) $(IntermediateDirectory)/src_sal_algorithms.c$(ObjectSuffix) $(IntermediateDirectory)/src_sal_array.c$(ObjectSuffix) $(IntermediateDirectory)/src_sal_assert.c$(ObjectSuffix) 
 
 
 
@@ -95,14 +95,6 @@ PreBuild:
 ##
 ## Objects
 ##
-$(IntermediateDirectory)/src_sal_lib.c$(ObjectSuffix): src/sal_lib.c $(IntermediateDirectory)/src_sal_lib.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "C:/Users/surafel911/Documents/Coding/Projects/Libraries/SAL/src/sal_lib.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_sal_lib.c$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/src_sal_lib.c$(DependSuffix): src/sal_lib.c
-	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_sal_lib.c$(ObjectSuffix) -MF$(IntermediateDirectory)/src_sal_lib.c$(DependSuffix) -MM src/sal_lib.c
-
-$(IntermediateDirectory)/src_sal_lib.c$(PreprocessSuffix): src/sal_lib.c
-	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_sal_lib.c$(PreprocessSuffix) src/sal_lib.c
-
 $(IntermediateDirectory)/src_sal_vector.c$(ObjectSuffix): src/sal_vector.c $(IntermediateDirectory)/src_sal_vector.c$(DependSuffix)
 	$(CC) $(SourceSwitch) "C:/Users/surafel911/Documents/Coding/Projects/Libraries/SAL/src/sal_vector.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_sal_vector.c$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/src_sal_vector.c$(DependSuffix): src/sal_vector.c

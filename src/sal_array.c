@@ -1,13 +1,14 @@
 #include "sal/sal_array.h"
 
-#include "sal/sal_lib.h"
 #include "sal/sal_assert.h"
+
+#include <stdlib.h>
 
 sal_array*
 sal_array_create(const unsigned short size, const size_t data_size)
 {
-	sal_array* array = (sal_array*)sal_malloc(sizeof(sal_array));
-	array->data = sal_malloc(data_size * size);
+	sal_array* array = (sal_array*)malloc(sizeof(sal_array));
+	array->data = malloc(data_size * size);
 	*(size_t*)&array->data_size = data_size;
 	*(unsigned short*)&array->size = size;
 
@@ -20,8 +21,8 @@ sal_array_destroy(sal_array** array)
 	sal_assert(array == NULL, "sal_array_destroy: Invalid reference to a pointer to a sal_array instance passed.");
 	sal_assert((*array) == NULL, "sal_array_destroy: Invalid pointer to sal_array instance passed.");
 
-	sal_free((*array)->data);
-	sal_free((*array));
+	free((*array)->data);
+	free((*array));
 
 	(*array) = NULL;
 }

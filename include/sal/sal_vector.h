@@ -1,7 +1,7 @@
 #ifndef SAL_VECTOR_H
 #define SAL_VECTOR_H
 
-#include "sal/sal_def.h"
+#include <stddef.h>
 
 #ifndef SAL_EMPTY
 /**
