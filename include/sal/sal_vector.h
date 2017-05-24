@@ -56,12 +56,12 @@
 /**
  * @brief Container for dynamically allocating contiguous data.
  */
-typedef struct
+struct sal_vector
 {
 	void* data;
 	const size_t data_size;
 	unsigned short size, capacity;
-} sal_vector;
+};
 
 /**
  * @brief Creates a new sal_vector instance.
@@ -70,7 +70,7 @@ typedef struct
  *
  * @return Pointer to a new sal_vector instance.
  */
-sal_vector*
+struct sal_vector*
 sal_vector_create(const unsigned short data_size);
 
 /**
@@ -82,7 +82,7 @@ sal_vector_create(const unsigned short data_size);
  * @param[in] vector sal_vector to destroy.
  */
 void
-sal_vector_destroy(sal_vector** vector);
+sal_vector_destroy(struct sal_vector** vector);
 
 /**
  * @brief Access element inside a sal_vector with bounds checking.
@@ -94,7 +94,7 @@ sal_vector_destroy(sal_vector** vector);
  * @return Pointer to the element in the sal_vector.
  */
 void*
-sal_vector_at(sal_vector* vector, const unsigned short pos);
+sal_vector_at(struct sal_vector* vector, const unsigned short pos);
 
 /**
  * @brief Clears the contents of the sal_vector.
@@ -104,7 +104,7 @@ sal_vector_at(sal_vector* vector, const unsigned short pos);
  * @param[in] vector sal_vector to clear.
  */
 void
-sal_vector_clear(sal_vector* vector);
+sal_vector_clear(struct sal_vector* vector);
 
 /**
  * @brief Frees unused memory in the sal_vector.
@@ -114,7 +114,7 @@ sal_vector_clear(sal_vector* vector);
  * @param[in] vector sal_vector to shrink.
  */
 void
-sal_vector_shrink(sal_vector* vector);
+sal_vector_shrink(struct sal_vector* vector);
 
 /**
  * @brief Changes the capacity of the sal_vector.
@@ -124,7 +124,7 @@ sal_vector_shrink(sal_vector* vector);
  * @param[in] capacity New capacity of the sal_vector.
  */
 void
-sal_vector_resize(sal_vector* vector, const unsigned short capacity);
+sal_vector_resize(struct sal_vector* vector, const unsigned short capacity);
 
 /**
  * @brief Get a new element in the sal_vector.
@@ -137,7 +137,7 @@ sal_vector_resize(sal_vector* vector, const unsigned short capacity);
  * @return Pointer to a new element in the sal_vector.
  */
 void*
-sal_vector_push_back(sal_vector* vector);
+sal_vector_push_back(struct sal_vector* vector);
 
 /**
  * @brief Get a new element in the sal_vector at passed in pos.
@@ -155,7 +155,7 @@ sal_vector_push_back(sal_vector* vector);
  * @return
  */
 void*
-sal_vector_insert(sal_vector* vector, const unsigned short pos);
+sal_vector_insert(struct sal_vector* vector, const unsigned short pos);
 
 /**
  * @brief Removes the last element.
@@ -166,7 +166,7 @@ sal_vector_insert(sal_vector* vector, const unsigned short pos);
  * @param[in] vector sal_vector to query.
  */
 void
-sal_vector_pop_back(sal_vector* vector);
+sal_vector_pop_back(struct sal_vector* vector);
 
 /**
  * @brief Removes element at the passed in pos.
@@ -179,6 +179,6 @@ sal_vector_pop_back(sal_vector* vector);
  * @param[in] pos Position of the element to be removed in the sal_vector.
  */
 void
-sal_vector_erase(sal_vector* vector, const unsigned short pos);
+sal_vector_erase(struct sal_vector* vector, const unsigned short pos);
 
 #endif // SAL_VECTOR_H

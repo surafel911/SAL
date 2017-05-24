@@ -51,12 +51,12 @@
 /**
  * @brief Container storing statically allocating contiguous data.
  */
-typedef struct
+struct sal_array
 {
 	void* data;
 	const size_t data_size;
 	const unsigned short size;
-} sal_array;
+};
 
 /**
  * @brief Creates a new sal_array instance.
@@ -67,7 +67,7 @@ typedef struct
  *
  * @return Pointer to a new sal_array instance.
  */
-sal_array*
+struct sal_array*
 sal_array_create(const unsigned short size, const size_t data_size);
 
 /**
@@ -79,7 +79,7 @@ sal_array_create(const unsigned short size, const size_t data_size);
  * @param[in] array sal_array to destroy.
  */
 void
-sal_array_destroy(sal_array** array);
+sal_array_destroy(struct sal_array** array);
 
 /**
  * @brief Access element inside a sal_array with bounds checking.
@@ -91,6 +91,6 @@ sal_array_destroy(sal_array** array);
  * @return Pointer to the element in the sal_array.
  */
 void*
-sal_array_at(sal_array* array, const unsigned short pos);
+sal_array_at(struct sal_array* array, const unsigned short pos);
 
 #endif // SAL_ARRAY_H

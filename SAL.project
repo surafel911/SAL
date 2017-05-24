@@ -17,6 +17,7 @@
       <File Name="include/sal/sal_algorithms.h"/>
       <File Name="include/sal/sal_typeinfo.h"/>
       <File Name="include/sal/sal_math.h"/>
+      <File Name="include/sal/sal_lib.h"/>
     </VirtualDirectory>
   </VirtualDirectory>
   <VirtualDirectory Name="src">
@@ -26,6 +27,7 @@
     <File Name="src/sal_algorithms.c"/>
     <File Name="src/sal_array.c"/>
     <File Name="src/sal_assert.c"/>
+    <File Name="src/sal_lib.c"/>
   </VirtualDirectory>
   <Dependencies Name="Debug"/>
   <Dependencies Name="Release"/>

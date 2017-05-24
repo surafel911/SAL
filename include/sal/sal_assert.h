@@ -4,13 +4,16 @@
 #include <stdbool.h>
 
 /**
- * @brief Evaluates the expression and, if false, prints out an error message and aborts the program.
+ * @brief Evaluates the expression and, if false, prints out the error message and exits the program with the given code.
  *
- * @param[in] expression Expression to be evaluated by sal_assert.h
+ * Evaluates the expression and, if false, prints out the error message and exits the program with the given code. Note
+ * that this function is not affected by the NDEBUG flag.
+ *
+ * @param[in] expression Expression to be evaluated by sal_assert.
  *
  * @param[in] message Message to be printed if the expression evaluates to false.
  */
 void
-sal_assert(bool expression, const char* message);
+sal_assert(const bool expression, const char* message);
 
 #endif // SAL_ASSERT_H

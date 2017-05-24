@@ -4,13 +4,12 @@
 #include <stdlib.h>
 
 void
-sal_assert(bool expression, const char* message)
+sal_assert(const bool expression, const char* message)
 {
-	#ifndef NDEBUG
 	if (expression)
 	{
 		printf("sal_assert failed.\n\n%s\n", message);
-		abort();
+		getchar();
+		exit(-EXIT_FAILURE);
 	}
-	#endif // NDEBUG
 }
