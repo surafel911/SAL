@@ -19,14 +19,15 @@
 #define SAL_TABLESET 256
 #endif // SAL_TABLESET
 
-#ifdef _SAL_MAP_MAX_CAPACITY
-#error "SAL_MAP_MAX_CAPACITY should not be defined."
-#else
+#ifndef _SAL_MAP_MAX_CAPACITY
+/**
+ * @brief Maximum value allowed for SAL_TABLESET.
+ */
 #define _SAL_MAP_MAX_CAPACITY 1000
 #endif // _SAL_MAP_MAX_CAPACITY
 
 #if SAL_TABLESET > _SAL_MAP_MAX_CAPACITY
-#error "SAL_TABLESET is greater than the maximum map capacity (1000)."
+#error "SAL_TABLESET is greater than the maximum tableset (1000)."
 #endif // SAL_TABLESET > _SAL_MAP_MAX_CAPACITY
 
 /************************************************************************************************

@@ -1,9 +1,8 @@
-#include <sal/sal_lib.h>
-
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "sal/sal_assert.h"
+#include <sal/sal_lib.h>
+#include <sal/sal_assert.h>
 
 void
 sal_free(void* ptr)
@@ -34,10 +33,7 @@ sal_malloc(const size_t data_size)
 void*
 sal_realloc(void* ptr, const size_t data_size)
 {
-	sal_assert(ptr == NULL, "sal_realloc: Invalid pointer passed.");
-
 	ptr = realloc(ptr, data_size);
-
 	sal_assert(ptr == NULL, "sal_realloc: Failed to allocate memory.");
 
 	return ptr;

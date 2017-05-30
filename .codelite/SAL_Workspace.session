@@ -1,19 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Session Name="C:\Users\surafel911\Documents\Coding\Projects\Libraries\SAL\SAL_Workspace.workspace">
-  <int Value="1" Name="m_selectedTab"/>
-  <wxString Value="C:\Users\surafel911\Documents\Coding\Projects\Libraries\SAL\SAL_Workspace.workspace" Name="m_workspaceName"/>
+<Session Name="C:\Users\surafel911\Documents\Coding\Libraries\SAL\SAL_Workspace.workspace">
+  <int Value="0" Name="m_selectedTab"/>
+  <wxString Value="C:\Users\surafel911\Documents\Coding\Libraries\SAL\SAL_Workspace.workspace" Name="m_workspaceName"/>
   <TabInfoArray Name="TabInfoArray">
     <TabInfo>
-      <wxString Value="C:\Users\surafel911\Documents\Coding\Projects\Libraries\SAL\src\sal_assert.c" Name="FileName"/>
+      <wxString Value="C:\Users\surafel911\Documents\Coding\Libraries\SAL\include\sal\sal_map.h" Name="FileName"/>
       <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="11" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds"/>
-    </TabInfo>
-    <TabInfo>
-      <wxString Value="C:\Users\surafel911\Documents\Coding\Projects\Libraries\SAL\src\sal_map.c" Name="FileName"/>
-      <int Value="45" Name="FirstVisibleLine"/>
-      <int Value="66" Name="CurrentLine"/>
+      <int Value="18" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>

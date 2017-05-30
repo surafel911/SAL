@@ -5,15 +5,15 @@
 ## Release
 ProjectName            :=SAL_Test
 ConfigurationName      :=Release
-WorkspacePath          :=C:/Users/surafel911/Documents/Coding/Projects/Libraries/SAL
-ProjectPath            :=C:/Users/surafel911/Documents/Coding/Projects/Libraries/SAL
+WorkspacePath          :=C:/Users/surafel911/Documents/Coding/Libraries/SAL
+ProjectPath            :=C:/Users/surafel911/Documents/Coding/Libraries/SAL
 IntermediateDirectory  :=test/obj/
 OutDir                 := $(IntermediateDirectory)
 CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=surafel911
-Date                   :=23/05/2017
+Date                   :=30/05/2017
 CodeLitePath           :="C:/Program Files/CodeLite"
 LinkerName             :=C:/mingw64/bin/g++.exe
 SharedObjectLinkerName :=C:/mingw64/bin/g++.exe -shared -fPIC
@@ -94,7 +94,7 @@ PreBuild:
 ## Objects
 ##
 $(IntermediateDirectory)/test_main.c$(ObjectSuffix): test/main.c $(IntermediateDirectory)/test_main.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "C:/Users/surafel911/Documents/Coding/Projects/Libraries/SAL/test/main.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/test_main.c$(ObjectSuffix) $(IncludePath)
+	$(CC) $(SourceSwitch) "C:/Users/surafel911/Documents/Coding/Libraries/SAL/test/main.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/test_main.c$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/test_main.c$(DependSuffix): test/main.c
 	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/test_main.c$(ObjectSuffix) -MF$(IntermediateDirectory)/test_main.c$(DependSuffix) -MM test/main.c
 

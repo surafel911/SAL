@@ -1,11 +1,10 @@
-#include "sal/sal_vector.h"
-
 #include <stdio.h>
 #include <stddef.h>
 #include <string.h>
 
-#include "sal/sal_lib.h"
-#include "sal/sal_assert.h"
+#include <sal/sal_lib.h>
+#include <sal/sal_assert.h>
+#include <sal/sal_vector.h>
 
 struct sal_vector*
 sal_vector_create(const unsigned short data_size)
