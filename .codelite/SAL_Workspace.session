@@ -1,12 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Session Name="C:\Users\surafel911\Documents\Coding\Libraries\SAL\SAL_Workspace.workspace">
-  <int Value="0" Name="m_selectedTab"/>
-  <wxString Value="C:\Users\surafel911\Documents\Coding\Libraries\SAL\SAL_Workspace.workspace" Name="m_workspaceName"/>
+<Session Name="/home/surafel911/Documents/Coding/SAL/SAL_Workspace.workspace">
+  <int Value="2" Name="m_selectedTab"/>
+  <wxString Value="/home/surafel911/Documents/Coding/SAL/SAL_Workspace.workspace" Name="m_workspaceName"/>
   <TabInfoArray Name="TabInfoArray">
     <TabInfo>
-      <wxString Value="C:\Users\surafel911\Documents\Coding\Libraries\SAL\include\sal\sal_map.h" Name="FileName"/>
+      <wxString Value="/home/surafel911/Documents/Coding/SAL/test/main.c" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="9" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="/home/surafel911/Documents/Coding/SAL/src/sal_assert.c" Name="FileName"/>
+      <int Value="13" Name="FirstVisibleLine"/>
+      <int Value="13" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="/home/surafel911/Documents/Coding/SAL/src/sal_map.c" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="7" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="/home/surafel911/Documents/Coding/SAL/src/sal_hash.c" Name="FileName"/>
       <int Value="0" Name="FirstVisibleLine"/>
       <int Value="18" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="/home/surafel911/Documents/Coding/SAL/src/sal_array.c" Name="FileName"/>
+      <int Value="6" Name="FirstVisibleLine"/>
+      <int Value="23" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="/home/surafel911/Documents/Coding/SAL/src/sal_vector.c" Name="FileName"/>
+      <int Value="2" Name="FirstVisibleLine"/>
+      <int Value="3" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>

@@ -5,21 +5,21 @@
 ## Release
 ProjectName            :=SAL_Test
 ConfigurationName      :=Release
-WorkspacePath          :=C:/Users/surafel911/Documents/Coding/Libraries/SAL
-ProjectPath            :=C:/Users/surafel911/Documents/Coding/Libraries/SAL
+WorkspacePath          :=/home/surafel911/Documents/Coding/SAL
+ProjectPath            :=/home/surafel911/Documents/Coding/SAL
 IntermediateDirectory  :=test/obj/
 OutDir                 := $(IntermediateDirectory)
 CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
-User                   :=surafel911
-Date                   :=30/05/2017
-CodeLitePath           :="C:/Program Files/CodeLite"
-LinkerName             :=C:/mingw64/bin/g++.exe
-SharedObjectLinkerName :=C:/mingw64/bin/g++.exe -shared -fPIC
+User                   :=Surafel Assefa
+Date                   :=06/11/17
+CodeLitePath           :=/home/surafel911/.codelite
+LinkerName             :=gcc
+SharedObjectLinkerName :=gcc -shared -fPIC
 ObjectSuffix           :=.o
 DependSuffix           :=.o.d
-PreprocessSuffix       :=.i
+PreprocessSuffix       :=.o.i
 DebugSwitch            :=-g 
 IncludeSwitch          :=-I
 LibrarySwitch          :=-l
@@ -31,12 +31,10 @@ OutputFile             :=test/$(ProjectName)
 Preprocessors          :=$(PreprocessorSwitch)NDEBUG 
 ObjectSwitch           :=-o 
 ArchiveOutputSwitch    := 
-PreprocessOnlySwitch   :=-E
+PreprocessOnlySwitch   :=-E 
 ObjectsFileList        :="SAL_Test.txt"
 PCHCompileFlags        :=
-MakeDirCommand         :=makedir
-RcCmpOptions           := 
-RcCompilerName         :=C:/mingw64/bin/windres.exe
+MakeDirCommand         :=mkdir -p
 LinkOptions            :=  
 IncludePath            :=  $(IncludeSwitch). $(IncludeSwitch)include/ 
 IncludePCH             := 
@@ -49,19 +47,19 @@ LibPath                := $(LibraryPathSwitch). $(LibraryPathSwitch)bin/
 ## Common variables
 ## AR, CXX, CC, AS, CXXFLAGS and CFLAGS can be overriden using an environment variables
 ##
-AR       := C:/mingw64/bin/ar.exe rcu
-CXX      := C:/mingw64/bin/g++.exe
-CC       := C:/mingw64/bin/gcc.exe
+AR       := ar rcus
+CXX      := gcc
+CC       := gcc
 CXXFLAGS :=  -O3 -Wall $(Preprocessors)
 CFLAGS   :=  -O3 -Wall $(Preprocessors)
 ASFLAGS  := 
-AS       := C:/mingw64/bin/as.exe
+AS       := as
 
 
 ##
 ## User defined environment variables
 ##
-CodeLiteDir:=C:\Program Files\CodeLite
+CodeLiteDir:=/usr/share/codelite
 Objects0=$(IntermediateDirectory)/test_main.c$(ObjectSuffix) 
 
 
@@ -81,11 +79,11 @@ $(OutputFile): $(IntermediateDirectory)/.d $(Objects)
 	$(LinkerName) $(OutputSwitch)$(OutputFile) @$(ObjectsFileList) $(LibPath) $(Libs) $(LinkOptions)
 
 MakeIntermediateDirs:
-	@$(MakeDirCommand) "test/obj/"
+	@test -d test/obj/ || $(MakeDirCommand) test/obj/
 
 
 $(IntermediateDirectory)/.d:
-	@$(MakeDirCommand) "test/obj/"
+	@test -d test/obj/ || $(MakeDirCommand) test/obj/
 
 PreBuild:
 
@@ -94,7 +92,7 @@ PreBuild:
 ## Objects
 ##
 $(IntermediateDirectory)/test_main.c$(ObjectSuffix): test/main.c $(IntermediateDirectory)/test_main.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "C:/Users/surafel911/Documents/Coding/Libraries/SAL/test/main.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/test_main.c$(ObjectSuffix) $(IncludePath)
+	$(CC) $(SourceSwitch) "/home/surafel911/Documents/Coding/SAL/test/main.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/test_main.c$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/test_main.c$(DependSuffix): test/main.c
 	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/test_main.c$(ObjectSuffix) -MF$(IntermediateDirectory)/test_main.c$(DependSuffix) -MM test/main.c
 

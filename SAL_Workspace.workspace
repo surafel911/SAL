@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CodeLite_Workspace Name="SAL_Workspace" Database="" Version="10.0.0">
-  <Project Name="SAL_Test" Path="SAL_Test.project" Active="Yes"/>
-  <Project Name="SAL" Path="SAL.project" Active="No"/>
+  <Project Name="SAL_Test" Path="SAL_Test.project" Active="No"/>
+  <Project Name="SAL" Path="SAL.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug" Selected="no">
       <Environment/>

@@ -1,4 +1,3 @@
-#include <sal/sal_lib.h>
 #include <sal/sal_array.h>
 #include <sal/sal_assert.h>
 

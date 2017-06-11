@@ -1,4 +1,3 @@
-#include <sal/sal_lib.h>
 #include <sal/sal_map.h>
 #include <sal/sal_hash.h>
 #include <sal/sal_assert.h>
@@ -6,7 +5,7 @@
 struct sal_map_s*
 sal_map_s_create()
 {
-	struct sal_map_s* map = (struct sal_map_s*)sal_calloc(1, sizeof(struct sal_map_s));
+	struct sal_map_s* map = (struct sal_map_s*)calloc(1, sizeof(struct sal_map_s));
 	sal_assert(map->data == NULL, "sal_map_s_create: Failed to allocate memory for a sal_map_s.");
 
 	map->data = sal_calloc(SAL_TABLESET, sizeof(struct sal_map_s_element));
@@ -48,11 +47,15 @@ sal_map_s_emplace(struct sal_map_s* map, const char* key, void* value)
 		{
 			element->key = key;
 			element->value = value;
+			
+			map->size++;
+	
+			return element;
 		}
-
-		map->size++;
-
-		return element;
+		else
+		{
+			return NULL;
+		}
 	}
 	else
 	{
@@ -115,11 +118,16 @@ sal_map_i_emplace(struct sal_map_i* map, int key, void* value)
 		{
 			*(int*)element = key;
 			element->value = value;
+			
+			
+			map->size++;
+			
+			return element;
 		}
-
-		map->size++;
-
-		return element;
+		else
+		{
+			return NULL;
+		}
 	}
 	else
 	{

@@ -5,21 +5,21 @@
 ## Release
 ProjectName            :=SAL
 ConfigurationName      :=Release
-WorkspacePath          :=C:/Users/surafel911/Documents/Coding/Libraries/SAL
-ProjectPath            :=C:/Users/surafel911/Documents/Coding/Libraries/SAL
+WorkspacePath          :=/home/surafel911/Documents/Coding/SAL
+ProjectPath            :=/home/surafel911/Documents/Coding/SAL
 IntermediateDirectory  :=bin/obj/
 OutDir                 := $(IntermediateDirectory)
 CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
-User                   :=surafel911
-Date                   :=30/05/2017
-CodeLitePath           :="C:/Program Files/CodeLite"
-LinkerName             :=C:/mingw64/bin/g++.exe
-SharedObjectLinkerName :=C:/mingw64/bin/g++.exe -shared -fPIC
+User                   :=Surafel Assefa
+Date                   :=06/11/17
+CodeLitePath           :=/home/surafel911/.codelite
+LinkerName             :=gcc
+SharedObjectLinkerName :=gcc -shared -fPIC
 ObjectSuffix           :=.o
 DependSuffix           :=.o.d
-PreprocessSuffix       :=.i
+PreprocessSuffix       :=.o.i
 DebugSwitch            :=-g 
 IncludeSwitch          :=-I
 LibrarySwitch          :=-l
@@ -31,12 +31,10 @@ OutputFile             :=bin/libsal.a
 Preprocessors          :=$(PreprocessorSwitch)NDEBUG 
 ObjectSwitch           :=-o 
 ArchiveOutputSwitch    := 
-PreprocessOnlySwitch   :=-E
+PreprocessOnlySwitch   :=-E 
 ObjectsFileList        :="SAL.txt"
 PCHCompileFlags        :=
-MakeDirCommand         :=makedir
-RcCmpOptions           := 
-RcCompilerName         :=C:/mingw64/bin/windres.exe
+MakeDirCommand         :=mkdir -p
 LinkOptions            :=  
 IncludePath            :=  $(IncludeSwitch). $(IncludeSwitch)include/ 
 IncludePCH             := 
@@ -49,19 +47,19 @@ LibPath                := $(LibraryPathSwitch).
 ## Common variables
 ## AR, CXX, CC, AS, CXXFLAGS and CFLAGS can be overriden using an environment variables
 ##
-AR       := C:/mingw64/bin/ar.exe rcu
-CXX      := C:/mingw64/bin/g++.exe
-CC       := C:/mingw64/bin/gcc.exe
+AR       := ar rcus
+CXX      := gcc
+CC       := gcc
 CXXFLAGS :=  -O3 -Wall $(Preprocessors)
 CFLAGS   :=  -O3 -Wall -std=c11 $(Preprocessors)
 ASFLAGS  := 
-AS       := C:/mingw64/bin/as.exe
+AS       := as
 
 
 ##
 ## User defined environment variables
 ##
-CodeLiteDir:=C:\Program Files\CodeLite
+CodeLiteDir:=/usr/share/codelite
 Objects0=$(IntermediateDirectory)/src_sal_vector.c$(ObjectSuffix) $(IntermediateDirectory)/src_sal_map.c$(ObjectSuffix) $(IntermediateDirectory)/src_sal_hash.c$(ObjectSuffix) $(IntermediateDirectory)/src_sal_algorithms.c$(ObjectSuffix) $(IntermediateDirectory)/src_sal_array.c$(ObjectSuffix) $(IntermediateDirectory)/src_sal_assert.c$(ObjectSuffix) $(IntermediateDirectory)/src_sal_lib.c$(ObjectSuffix) 
 
 
@@ -79,15 +77,15 @@ $(OutputFile): $(Objects)
 	@echo "" > $(IntermediateDirectory)/.d
 	@echo $(Objects0)  > $(ObjectsFileList)
 	$(AR) $(ArchiveOutputSwitch)$(OutputFile) @$(ObjectsFileList) $(ArLibs)
-	@$(MakeDirCommand) "C:\Users\surafel911\Documents\Coding\Libraries\SAL/.build-release"
-	@echo rebuilt > "C:\Users\surafel911\Documents\Coding\Libraries\SAL/.build-release/SAL"
+	@$(MakeDirCommand) "/home/surafel911/Documents/Coding/SAL/.build-release"
+	@echo rebuilt > "/home/surafel911/Documents/Coding/SAL/.build-release/SAL"
 
 MakeIntermediateDirs:
-	@$(MakeDirCommand) "bin/obj/"
+	@test -d bin/obj/ || $(MakeDirCommand) bin/obj/
 
 
 bin/obj/:
-	@$(MakeDirCommand) "bin/obj/"
+	@test -d bin/obj/ || $(MakeDirCommand) bin/obj/
 
 PreBuild:
 
@@ -96,7 +94,7 @@ PreBuild:
 ## Objects
 ##
 $(IntermediateDirectory)/src_sal_vector.c$(ObjectSuffix): src/sal_vector.c $(IntermediateDirectory)/src_sal_vector.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "C:/Users/surafel911/Documents/Coding/Libraries/SAL/src/sal_vector.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_sal_vector.c$(ObjectSuffix) $(IncludePath)
+	$(CC) $(SourceSwitch) "/home/surafel911/Documents/Coding/SAL/src/sal_vector.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_sal_vector.c$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/src_sal_vector.c$(DependSuffix): src/sal_vector.c
 	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_sal_vector.c$(ObjectSuffix) -MF$(IntermediateDirectory)/src_sal_vector.c$(DependSuffix) -MM src/sal_vector.c
 
@@ -104,7 +102,7 @@ $(IntermediateDirectory)/src_sal_vector.c$(PreprocessSuffix): src/sal_vector.c
 	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_sal_vector.c$(PreprocessSuffix) src/sal_vector.c
 
 $(IntermediateDirectory)/src_sal_map.c$(ObjectSuffix): src/sal_map.c $(IntermediateDirectory)/src_sal_map.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "C:/Users/surafel911/Documents/Coding/Libraries/SAL/src/sal_map.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_sal_map.c$(ObjectSuffix) $(IncludePath)
+	$(CC) $(SourceSwitch) "/home/surafel911/Documents/Coding/SAL/src/sal_map.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_sal_map.c$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/src_sal_map.c$(DependSuffix): src/sal_map.c
 	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_sal_map.c$(ObjectSuffix) -MF$(IntermediateDirectory)/src_sal_map.c$(DependSuffix) -MM src/sal_map.c
 
@@ -112,7 +110,7 @@ $(IntermediateDirectory)/src_sal_map.c$(PreprocessSuffix): src/sal_map.c
 	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_sal_map.c$(PreprocessSuffix) src/sal_map.c
 
 $(IntermediateDirectory)/src_sal_hash.c$(ObjectSuffix): src/sal_hash.c $(IntermediateDirectory)/src_sal_hash.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "C:/Users/surafel911/Documents/Coding/Libraries/SAL/src/sal_hash.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_sal_hash.c$(ObjectSuffix) $(IncludePath)
+	$(CC) $(SourceSwitch) "/home/surafel911/Documents/Coding/SAL/src/sal_hash.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_sal_hash.c$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/src_sal_hash.c$(DependSuffix): src/sal_hash.c
 	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_sal_hash.c$(ObjectSuffix) -MF$(IntermediateDirectory)/src_sal_hash.c$(DependSuffix) -MM src/sal_hash.c
 
@@ -120,7 +118,7 @@ $(IntermediateDirectory)/src_sal_hash.c$(PreprocessSuffix): src/sal_hash.c
 	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_sal_hash.c$(PreprocessSuffix) src/sal_hash.c
 
 $(IntermediateDirectory)/src_sal_algorithms.c$(ObjectSuffix): src/sal_algorithms.c $(IntermediateDirectory)/src_sal_algorithms.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "C:/Users/surafel911/Documents/Coding/Libraries/SAL/src/sal_algorithms.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_sal_algorithms.c$(ObjectSuffix) $(IncludePath)
+	$(CC) $(SourceSwitch) "/home/surafel911/Documents/Coding/SAL/src/sal_algorithms.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_sal_algorithms.c$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/src_sal_algorithms.c$(DependSuffix): src/sal_algorithms.c
 	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_sal_algorithms.c$(ObjectSuffix) -MF$(IntermediateDirectory)/src_sal_algorithms.c$(DependSuffix) -MM src/sal_algorithms.c
 
@@ -128,7 +126,7 @@ $(IntermediateDirectory)/src_sal_algorithms.c$(PreprocessSuffix): src/sal_algori
 	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_sal_algorithms.c$(PreprocessSuffix) src/sal_algorithms.c
 
 $(IntermediateDirectory)/src_sal_array.c$(ObjectSuffix): src/sal_array.c $(IntermediateDirectory)/src_sal_array.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "C:/Users/surafel911/Documents/Coding/Libraries/SAL/src/sal_array.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_sal_array.c$(ObjectSuffix) $(IncludePath)
+	$(CC) $(SourceSwitch) "/home/surafel911/Documents/Coding/SAL/src/sal_array.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_sal_array.c$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/src_sal_array.c$(DependSuffix): src/sal_array.c
 	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_sal_array.c$(ObjectSuffix) -MF$(IntermediateDirectory)/src_sal_array.c$(DependSuffix) -MM src/sal_array.c
 
@@ -136,7 +134,7 @@ $(IntermediateDirectory)/src_sal_array.c$(PreprocessSuffix): src/sal_array.c
 	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_sal_array.c$(PreprocessSuffix) src/sal_array.c
 
 $(IntermediateDirectory)/src_sal_assert.c$(ObjectSuffix): src/sal_assert.c $(IntermediateDirectory)/src_sal_assert.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "C:/Users/surafel911/Documents/Coding/Libraries/SAL/src/sal_assert.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_sal_assert.c$(ObjectSuffix) $(IncludePath)
+	$(CC) $(SourceSwitch) "/home/surafel911/Documents/Coding/SAL/src/sal_assert.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_sal_assert.c$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/src_sal_assert.c$(DependSuffix): src/sal_assert.c
 	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_sal_assert.c$(ObjectSuffix) -MF$(IntermediateDirectory)/src_sal_assert.c$(DependSuffix) -MM src/sal_assert.c
 
@@ -144,7 +142,7 @@ $(IntermediateDirectory)/src_sal_assert.c$(PreprocessSuffix): src/sal_assert.c
 	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_sal_assert.c$(PreprocessSuffix) src/sal_assert.c
 
 $(IntermediateDirectory)/src_sal_lib.c$(ObjectSuffix): src/sal_lib.c $(IntermediateDirectory)/src_sal_lib.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "C:/Users/surafel911/Documents/Coding/Libraries/SAL/src/sal_lib.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_sal_lib.c$(ObjectSuffix) $(IncludePath)
+	$(CC) $(SourceSwitch) "/home/surafel911/Documents/Coding/SAL/src/sal_lib.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_sal_lib.c$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/src_sal_lib.c$(DependSuffix): src/sal_lib.c
 	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_sal_lib.c$(ObjectSuffix) -MF$(IntermediateDirectory)/src_sal_lib.c$(DependSuffix) -MM src/sal_lib.c
 
