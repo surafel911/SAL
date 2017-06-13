@@ -1,5 +1,0 @@
-[{
-  "directory": "C:\\Users\\surafel911\\Documents\\Coding\\Libraries\\SAL",
-  "command": "C:/mingw64/bin/gcc.exe -c C:/Users/surafel911/Documents/Coding/Libraries/SAL/src/sal_map.c -O3 -Wall -std=c11 -DNDEBUG -o bin/obj//src_sal_map.c.o -I. -Iinclude/",
-  "file": "C:\\Users\\surafel911\\Documents\\Coding\\Libraries\\SAL\\src\\sal_map.c"
- }]
