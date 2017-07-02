@@ -19,11 +19,13 @@ sal_assert(const bool expression, const char* message)
 		if (_error_callback != NULL)
 		{
 			_error_callback(message);
+			abort();
 		}
 		else
 		{
 			fprintf(stderr, "%s\n\n", message);
-			exit(EXIT_FAILURE);	
+			perror("\n\nErrno");
+			abort();
 		}
 	}
 }

@@ -5,6 +5,7 @@
 
 #include <sal/sal_lib.h>
 #include <sal/sal_assert.h>
+#include <sal/sal_algorithms.h>
 
 void
 sal_free(void* ptr)
