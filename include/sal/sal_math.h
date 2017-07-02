@@ -3,85 +3,92 @@
 
 #include <math.h>
 
-__inline__ double
+#include <sal/internal/export.h>
+
+#ifdef _cplusplus
+extern "C"
+{
+#endif // _cplusplus
+
+SALAPI __inline__ double
 sal_acos(double x)
 {
 	return acos(x) * (180.0 / M_PI);
 }
 
-__inline__ double
+SALAPI __inline__ double
 sal_asin(double x)
 {
 	return asin(x) * (180.0 / M_PI);
 }
-__inline__ double
+SALAPI __inline__ double
 sal_atan(double x)
 {
 	return atan(x) * (180.0 / M_PI);
 }
 
-__inline__ double
+SALAPI __inline__ double
 sal_atan2(double y, double x)
 {
 	return atan2(y / (180.0 / M_PI), x / (180.0 / M_PI)) * (180.0 / M_PI);
 }
 
-__inline__ double
+SALAPI __inline__ double
 sal_cos(double x)
 {
 	return cos(x / (180.0 / M_PI));
 }
 
-__inline__ double
+SALAPI __inline__ double
 sal_sin(double x)
 {
 	return sin(x / (180.0 / M_PI));
 }
 
-__inline__ double
+SALAPI __inline__ double
 sal_tan(double x)
 {
 	return tan(x / (180.0 / M_PI));
 }
 
-__inline__ float
+SALAPI __inline__ float
 sal_acosf(float x)
 {
 	return acosf(x / (180.0 / M_PI)) * (180.0f / M_PI);
 }
 
-__inline__ float
+SALAPI__inline__ float
 sal_asinf(float x)
 {
 	return asinf(x / (180.0 / M_PI)) * (180.0f / M_PI);
 }
 
-__inline__ float
+SALAPI __inline__ float
 sal_atanf(float x)
 {
 	return atanf(x / (180.0 / M_PI)) * (180.0f / M_PI);
 }
 
-__inline__ float
+SALAPI __inline__ float
 sal_atan2f(float y, float x)
 {
 	return atan2f(y / (180.0 / M_PI), x / (180.0 / M_PI)) * (180.0f / M_PI);
 }
 
 
-__inline__ float
+SALAPI __inline__ float
 sal_cosf(float x)
 {
 	return cosf(x / (180.0 / M_PI));
 }
 
-__inline__ float
+SALAPI __inline__ float
 sal_sinf(float x)
 {
 	return sinf(x / (180.0 / M_PI));
 }
 
-__inline__ float
+SALAPI __inline__ float
 sal_tanf(float x)
 {
 	return tanf(x / (180.0 / M_PI));
@@ -103,5 +110,9 @@ sal_tanf(float x)
 #define sinf(x) sal_sinf(x)
 #define tanf(x) sal_tanf(x)
 #endif // SAL_MATH_DEGREE
+
+#ifdef _cplusplus
+}
+#endif // _csplutplus
 
 #endif // SAL_MATH_H

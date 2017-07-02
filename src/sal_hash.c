@@ -1,10 +1,10 @@
 #include <sal/sal_hash.h>
 
-unsigned long
+uint64_t
 sal_hash_s(const char* string)
 {
-	unsigned long hash = 5381;
-	int c;
+	uint64_t hash = 5381;
+	int32_t c;
 
 	while ((c = *string++))
 	{
@@ -14,8 +14,8 @@ sal_hash_s(const char* string)
 	return hash;
 }
 
-unsigned int
-sal_hash_i(unsigned int value)
+uint32_t
+sal_hash_i(uint32_t value)
 {
    value = (value + 0x7ed55d16) + (value << 12);
    value = (value ^ 0xc761c23c) ^ (value >> 19);

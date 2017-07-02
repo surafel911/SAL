@@ -21,9 +21,4 @@
  */
 #define sal_type_index(type) (sal_type_index)sal_hash_s(#type)
 
-/**
- * @brief
- */
-typedef unsigned int sal_type_index;
-
 #endif // SAL_TYPEINFO_H

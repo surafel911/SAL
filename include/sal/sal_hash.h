@@ -1,6 +1,15 @@
 #ifndef SAL_HASH_H
 #define SAL_HASH_H
 
+#include <stdint.h>
+
+#include <sal/internal/export.h>
+
+#ifdef _cplusplus
+extern "C"
+{
+#endif // _cplusplus
+
 /**
  * @brief Hashing function for strings.
  *
@@ -10,7 +19,7 @@
  *
  * @return A hashed value of the C string seed.
  */
-unsigned long
+SALAPI uint64_t
 sal_hash_s(const char* string);
 
 /**
@@ -22,7 +31,11 @@ sal_hash_s(const char* string);
  *
  * @return A hashed value of the integer seed.
  */
-unsigned int
-sal_hash_i(unsigned int value);
+SALAPI uint32_t
+sal_hash_i(uint32_t value);
+
+#ifdef _cplusplus
+}
+#endif // _csplutplus
 
 #endif // SAL_HASH_H

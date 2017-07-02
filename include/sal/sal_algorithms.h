@@ -3,6 +3,13 @@
 
 #include <stddef.h>
 
+#include <sal/internal/export.h>
+
+#ifdef _cplusplus
+extern "C"
+{
+#endif // _cplusplus
+
 /**
  * @brief
  *
@@ -12,7 +19,7 @@
  *
  * @param[in] destination
  */
-void
+SALAPI void
 sal_move(void* first, void* last, void* destination);
 
 /**
@@ -24,7 +31,18 @@ sal_move(void* first, void* last, void* destination);
  *
  * @param[in] data_size
  */
-void
+SALAPI void
 sal_swap(void* first, void* second, const size_t data_size);
+
+/**
+ * @brief
+ *
+ */
+SALAPI const char*
+sal_build_string(const char* format, ...);
+
+#ifdef _cplusplus
+}
+#endif // _csplutplus
 
 #endif // SAL_ALGORITHMS_H

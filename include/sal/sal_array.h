@@ -2,6 +2,14 @@
 #define SAL_ARRAY_H
 
 #include <stddef.h>
+#include <stdint.h>
+
+#include <sal/internal/export.h>
+
+#ifdef _cplusplus
+extern "C"
+{
+#endif // _cplusplus
 
 #ifndef SAL_EMPTY
 /**
@@ -55,7 +63,7 @@ struct sal_array
 {
 	void* data;
 	const size_t data_size;
-	const unsigned short size;
+	const uint16_t size;
 };
 
 /**
@@ -67,8 +75,8 @@ struct sal_array
  *
  * @return Pointer to a new sal_array instance.
  */
-struct sal_array*
-sal_array_create(const unsigned short size, const size_t data_size);
+SALAPI struct sal_array*
+sal_array_create(const uint16_t size, const size_t data_size);
 
 /**
  * @brief Destroys a the sal_array.
@@ -78,7 +86,7 @@ sal_array_create(const unsigned short size, const size_t data_size);
  *
  * @param[in] array sal_array to destroy.
  */
-void
+SALAPI void
 sal_array_destroy(struct sal_array** array);
 
 /**
@@ -90,7 +98,11 @@ sal_array_destroy(struct sal_array** array);
  *
  * @return Pointer to the element in the sal_array.
  */
-void*
-sal_array_at(struct sal_array* array, const unsigned short pos);
+SALAPI void*
+sal_array_at(struct sal_array* array, const uint16_t pos);
+
+#ifdef _cplusplus
+}
+#endif // _csplutplus
 
 #endif // SAL_ARRAY_H

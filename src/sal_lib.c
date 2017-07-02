@@ -1,5 +1,7 @@
-#include <stdio.h>
+#include <stddef.h>
+#include <stdint.h>
 #include <stdlib.h>
+#include <string.h>
 
 #include <sal/sal_lib.h>
 #include <sal/sal_assert.h>
@@ -7,34 +9,34 @@
 void
 sal_free(void* ptr)
 {
-	sal_assert(ptr == NULL, "sal_free: Invalid pointer passed.");
+	sal_assert(ptr == NULL, "sal_free: Pointer points to an invalid location.");
 
 	free(ptr);
 }
 
 void*
-sal_calloc(const int nitems, const size_t data_size)
+sal_malloc(const size_t size)
 {
-	void* ptr = calloc(nitems, data_size);
-	sal_assert(ptr == NULL, "sal_calloc: Failed to allocate memory.");
+	void* mem = malloc(size);
+	sal_assert(mem == NULL, "sal_malloc: Failed to allocate memory.");
 
-	return ptr;
+	return mem;
 }
 
 void*
-sal_malloc(const size_t data_size)
+sal_calloc(const uint32_t nitems, const size_t size)
 {
-	void* ptr = malloc(data_size);
-	sal_assert(ptr == NULL, "sal_malloc: Failed to allocate memory.");
+	void* mem = calloc(nitems, size);
+	sal_assert(mem == NULL, "sal_calloc: Failed to allocate memory.");
 
-	return ptr;
+	return mem;
 }
 
 void*
-sal_realloc(void* ptr, const size_t data_size)
+sal_realloc(void* ptr, const size_t size)
 {
-	ptr = realloc(ptr, data_size);
-	sal_assert(ptr == NULL, "sal_realloc: Failed to allocate memory.");
+	void* mem = realloc(ptr, size);
+	sal_assert(mem == NULL, "sal_realloc: Failed to allocate memory.");
 
-	return ptr;
+	return mem;
 }
