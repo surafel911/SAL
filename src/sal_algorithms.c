@@ -33,7 +33,9 @@ const char*
 sal_build_string(const char* format, ...)
 {
 	va_list arg_list;
+	va_list arg_start;
 	va_start(arg_list, format);
+	va_copy(arg_start, arg_list);
 	
 	size_t string_length = 0;
 	size_t format_length = strlen(format);
@@ -67,9 +69,9 @@ sal_build_string(const char* format, ...)
 	}
 
 	char* string = sal_malloc(sizeof(char) * (string_length + 1));
-	vsprintf(string, start, arg_list);
-	(*(string + (string_length - 1))) = '\0';
-	
+	vsprintf(string, start, arg_start);
+	(*(string + string_length)) = '\0';
+
 	va_end(arg_list);
 
 	return (const char*)string;

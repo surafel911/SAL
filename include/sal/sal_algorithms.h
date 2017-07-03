@@ -3,7 +3,19 @@
 
 #include <stddef.h>
 
-#include <sal/internal/export.h>
+#if defined(_MSC_VER) && defined(_SAL_BUILD_DLL)
+ /* Building SAL as a Win32 DLL */
+ #define SALAPI __declspec(dllexport)
+#elif defined(_MSC_VER) && defined(SAL_DLL)
+ /* Calling SAL as a Win32 DLL */
+ #define SALAPI __declspec(dllimport)
+#elif defined(__GNUC__) && defined(_SAL_BUILD_DLL)
+ /* Building SAL as a shared / dynamic library */
+ #define SALAPI __attribute__((visibility("default")))
+#else
+ /* Building or calling SAL as a static library */
+ #define SALAPI
+#endif // BUILD_DLL
 
 #ifdef _cplusplus
 extern "C"
