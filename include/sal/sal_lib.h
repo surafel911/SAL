@@ -23,16 +23,16 @@ extern "C"
 {
 #endif // _cplusplus
 
-void
+SALAPI void
 sal_free(void* ptr);
 
-void*
+SALAPI void*
 sal_malloc(const size_t size);
 
-void*
+SALAPI void*
 sal_calloc(const uint32_t nitems, const size_t size);
 
-void*
+SALAPI void*
 sal_realloc(void* ptr, const size_t size);
 
 #ifdef _cplusplus
