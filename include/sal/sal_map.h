@@ -26,30 +26,12 @@ extern "C"
 /**
  * @brief Flag to be compared with the container size to determine whether the container is empty or not.
  */
-#define SAL_EMPTY 0
+ #define SAL_EMPTY 0
 #endif // SAL_EMPTY
 
 #ifndef SAL_TABLESET
-/**
- * @brief Number of elements in a map.
- *
- * Number of elements in a map. This macro is used to indicate where in the sal_map an element will be stored
- * after hashing the key. This macro can be overridden before including the header file to change the tableset
- * of the map.
- */
-#define SAL_TABLESET 256
+ #define SAL_TABLESET 1000
 #endif // SAL_TABLESET
-
-#ifndef _SAL_MAP_MAX_CAPACITY
-/**
- * @brief Maximum value allowed for SAL_TABLESET.
- */
-#define _SAL_MAP_MAX_CAPACITY 1000
-#endif // _SAL_MAP_MAX_CAPACITY
-
-#if SAL_TABLESET > _SAL_MAP_MAX_CAPACITY
-#error "SAL_TABLESET is greater than the maximum tableset (1000)."
-#endif // SAL_TABLESET > _SAL_MAP_MAX_CAPACITY
 
 /************************************************************************************************
  * Generic function macros
